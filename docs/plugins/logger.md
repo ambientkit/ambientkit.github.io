@@ -55,3 +55,28 @@ const (
 	LogLevelFatal
 )
 ```
+
+## Test Suite
+
+You can also run the logger test suite against your plugin to make sure it meets all the requirements.
+
+```go title="logger_test.go"
+package logger_test
+
+import (
+	"bufio"
+	"testing"
+
+	"github.com/ambientkit/ambient"
+	"github.com/ambientkit/plugin/pkg/loggertestsuite"
+)
+
+// Run the standard logger test suite.
+func TestMain(t *testing.T) {
+	rt := loggertestsuite.New()
+	rt.Run(t, func(writer *bufio.Writer) ambient.AppLogger {
+		// Replace with your own logger.
+		return logger.NewLogger("app", "1.0", writer)
+	})
+}
+```

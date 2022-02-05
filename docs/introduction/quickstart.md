@@ -13,7 +13,7 @@ Let's discover Ambient in **less than 5 minutes**.
 
 ### Generate a Web App
 
-To build a full web app ([screenshots](https://github.com/ambientkit/ambient#screenshots)), run these commands.
+To build a full web app ([screenshots](/docs/docs/introduction/screenshots)), run these commands.
 
 Build the Ambient interactive CLI (amb) in the current folder.
 

@@ -27,7 +27,8 @@ const sidebars = {
           id: 'introduction/quickstart',
           label: 'Quickstart',
         },
-        'introduction/screenshots'],
+        'introduction/screenshots',
+      ],
     },
     // {
     //   type: 'doc',
@@ -148,6 +149,37 @@ const sidebars = {
           type: 'doc',
           id: 'cli/decryptstorage',
           label: 'decryptstorage',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Template',
+      items: [
+        {
+          type: 'doc',
+          id: 'template/app',
+          label: 'ambient-template',
+        },
+        {
+          type: 'doc',
+          id: 'template/autorebuild',
+          label: 'Automatic Rebuilds',
+        },
+        {
+          type: 'doc',
+          id: 'template/swagger',
+          label: 'Swagger Generation',
+        },
+        {
+          type: 'doc',
+          id: 'template/env',
+          label: 'Environment Variables',
+        },
+        {
+          type: 'doc',
+          id: 'template/settings',
+          label: 'App Settings',
         },
       ],
     },

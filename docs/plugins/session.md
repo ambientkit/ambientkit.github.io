@@ -50,3 +50,27 @@ type AppSession interface {
 	DeleteSessionValue(r *http.Request, name string)
 }
 ```
+
+## Test Suite
+
+You can also run the session manager test suite against your plugin to make sure it meets all the requirements.
+
+```go title="sessmgr_test.go"
+package sessmgr_test
+
+import (
+	"net/http"
+	"testing"
+
+	"github.com/ambientkit/ambient"
+	"github.com/ambientkit/plugin/pkg/sessmgrtestsuite"
+)
+
+// Run the standard session manager test suite.
+func TestMain(t *testing.T) {
+	ts := sessmgrtestsuite.New()
+	ts.Run(t, func() (ambient.AppSession, func(next http.Handler) http.Handler) {
+		return setup(t) // Replace with your own setup function.
+	})
+}
+```

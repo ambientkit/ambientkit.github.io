@@ -2,11 +2,11 @@
 
 Ambient supports the following types of plugin functions via the [Plugin interface](https://github.com/ambientkit/ambient/blob/main/ambient.go):
 
-- logger
+- logger (includes [test suite](/docs/docs/plugins/logger#test-suite))
 - storage system
-- session manager
+- session manager (includes [test suite](/docs/docs/plugins/session#test-suite))
 - template engine
-- router
+- router (includes [test suite](/docs/docs/plugins/router#test-suite))
 - middleware
 - routes
 - grant requests
@@ -14,6 +14,8 @@ Ambient supports the following types of plugin functions via the [Plugin interfa
 - assets
 - funcmaps
 
-There are also plugins that fall outside this list (most of them). They use the remainder of the functions to modify or interact with the app. Since a single interface is used for all plugins, a single plugin could essentially serve all the purposes, but then it wouldn't reall
+The main difference between the plugins is what functions are implemented. Remember: there is a single interface that is used for all plugins so a single plugin could fulfill all the requirements of an application if desired.
 
-The main difference between the plugins is what functions are called in them.
+## Generic Plugins
+
+You will also be creating plugins that hold your business logic. They are plugins as well and probably the most important ones. You'll spend most of your time building your application inside of a plugin. Even business logic is treated like a plugin so it's reusable and follows conventions. Generic plugins use the remainder of the functions available to modify or interact with the app.
