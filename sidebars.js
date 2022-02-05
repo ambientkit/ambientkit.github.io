@@ -21,7 +21,13 @@ const sidebars = {
     {
       type: 'category',
       label: 'Intoduction',
-      items: ['intro', 'screenshots'],
+      items: [
+        {
+          type: 'doc',
+          id: 'introduction/quickstart',
+          label: 'Quickstart',
+        },
+        'introduction/screenshots'],
     },
     // {
     //   type: 'doc',
@@ -30,13 +36,100 @@ const sidebars = {
     // },
     {
       type: 'category',
-      label: 'CLI',
-      items: ['cli'],
+      label: 'Plugins',
+      items: [
+        {
+          type: 'doc',
+          id: 'plugins/overview',
+          label: 'Overview',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/mvp',
+          label: 'Your First Plugin (MVP)',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/types',
+          label: 'Types of Plugins',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/logger',
+          label: 'Logger',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/storage',
+          label: 'Storage System',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/session',
+          label: 'Session Manager',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/template-engine',
+          label: 'Template Engine',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/router',
+          label: 'Router',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/middleware',
+          label: 'Middleware',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/routes',
+          label: 'Routes',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/grants',
+          label: 'Grant Requests',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/settings',
+          label: 'Settings',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/assets',
+          label: 'Assets',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/funcmaps',
+          label: 'Funcmaps',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/practices',
+          label: 'Best Practices & FAQ',
+        },
+      ],
     },
     {
       type: 'category',
-      label: 'Plugin Development',
-      items: ['plugin-development'],
+      label: 'CLI',
+      items: [
+        {
+          type: 'doc',
+          id: 'cli/amb',
+          label: 'AMB',
+        },
+      ],
+    },
+    {
+      type: 'doc',
+      id: 'faq',
+      label: 'FAQ',
     },
   ],
 };
