@@ -14,7 +14,7 @@ The home screen is from the [simplelogin plugin](https://github.com/ambientkit/p
 
 ![Home](/img/screenshots/home.png)
 
-The login page takes a username and password (handled by the [simplelogin plugin](https://github.com/ambientkit/plugin/tree/main/generic/simplelogin/simplelogin.go)). The password hash is read from the environment variable: `AMB_PASSWORD_HASH`. The [scssession plugin](https://github.com/ambientkit/plugin/tree/main/sessionmanager/scssession/scssession.go) handles the session creation and stores to the local filesystem, but supports any storage system via a plugin that satisfies the [`SessionStorer`](ambient_sessionstorer.go) interface.
+The login page takes a username and password (handled by the [simplelogin plugin](https://github.com/ambientkit/plugin/tree/main/generic/simplelogin/simplelogin.go)). The password hash is read from the environment variable: `AMB_PASSWORD_HASH`. The [scssession plugin](https://github.com/ambientkit/plugin/tree/main/sessionmanager/scssession/scssession.go) handles the session creation and stores to the local filesystem, but supports any storage system via a plugin that satisfies the [`SessionStorer`](https://github.com/ambientkit/ambient/tree/main/ambient_sessionstorer.go) interface.
 
 ![Login](/img/screenshots/login.png)
 
@@ -34,6 +34,6 @@ Once enabled, the [author plugin](https://github.com/ambientkit/plugin/tree/main
 
 ![HTML](/img/screenshots/htmlauthor.png)
 
-The backend storage is provided by the [gcpbucketstorage plugin](https://github.com/ambientkit/plugin/tree/main/storage/gcpbucketstorage/gcpbucketstorage.go) and is stored in a JSON file on the local filesystem, but supports any storage system via a plugin that satisfies the [`DataStorer`](ambient_datastorer.go) interface.
+The backend storage is provided by the [gcpbucketstorage plugin](https://github.com/ambientkit/plugin/tree/main/storage/gcpbucketstorage/gcpbucketstorage.go) and is stored in a JSON file on the local filesystem, but supports any storage system via a plugin that satisfies the [`DataStorer`](https://github.com/ambientkit/ambient/tree/main/ambient_datastorer.go) interface.
 
 ![Storage](/img/screenshots/storage.png)
