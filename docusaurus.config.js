@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Ambient',
-  tagline: 'Pluggable Web Framework in Go',
+  tagline: 'Pluggable web framework in Go',
   url: 'https://ambientkit.github.io',
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',
