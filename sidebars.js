@@ -20,7 +20,7 @@ const sidebars = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: 'Intoduction',
+      label: 'Introduction',
       items: [
         {
           type: 'doc',
