@@ -19,7 +19,7 @@ func (p *Plugin) Router(logger ambient.Logger, te ambient.Renderer) (ambient.App
 
 The function should return an object that satisfies the [`AppRouter`](https://github.com/ambientkit/ambient/blob/main/ambient_router.go) interface. Note the router needs to support clearing routes which may require extending popular router packages.
 
-```go
+```go title="ambient_router.go"
 // AppRouter represents a router.
 type AppRouter interface {
 	Router

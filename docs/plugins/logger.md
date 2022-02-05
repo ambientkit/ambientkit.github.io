@@ -15,7 +15,7 @@ func (p *Plugin) Logger(appName string, appVersion string) (ambient.AppLogger, e
 
 The function should return an object that satisfies the [`AppLogger`](https://github.com/ambientkit/ambient/blob/main/ambient_logger.go) interface. You should probably also add in an option to output in either human readable format (tabs) or JSON to make it easy to work with in development or in production.
 
-```go
+```go title="ambient_logger.go"
 package ambient
 
 // AppLogger represents the log service for the app.

@@ -122,7 +122,32 @@ const sidebars = {
         {
           type: 'doc',
           id: 'cli/amb',
-          label: 'AMB',
+          label: 'Install amb',
+        },
+        {
+          type: 'doc',
+          id: 'cli/createapp',
+          label: 'createapp',
+        },
+        {
+          type: 'doc',
+          id: 'cli/enable',
+          label: 'enable',
+        },
+        {
+          type: 'doc',
+          id: 'cli/grant',
+          label: 'grant',
+        },
+        {
+          type: 'doc',
+          id: 'cli/encryptstorage',
+          label: 'encryptstorage',
+        },
+        {
+          type: 'doc',
+          id: 'cli/decryptstorage',
+          label: 'decryptstorage',
         },
       ],
     },

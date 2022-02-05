@@ -35,7 +35,7 @@ func (p *Plugin) Middleware() []func(next http.Handler) http.Handler {
 
 The `SessionManager()` function should return an object that satisfies the [`AppSession`](https://github.com/ambientkit/ambient/blob/main/ambient_session.go) interface. The `Middleware()` function should return an object that satisfies the `[]func(next http.Handler) http.Handler` definition.
 
-```go
+```go title="ambient_session.go"
 // AppSession represents a user session.
 type AppSession interface {
 	AuthenticatedUser(r *http.Request) (string, error)

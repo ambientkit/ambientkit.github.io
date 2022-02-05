@@ -22,13 +22,15 @@ func (p *Plugin) Storage(logger ambient.Logger) (ambient.DataStorer, ambient.Ses
 
 The function should return objects that satisfy the [`DataStorer`](https://github.com/ambientkit/ambient/blob/main/ambient_datastorer.go) interface and the [`SessionStorer`](https://github.com/ambientkit/ambient/blob/main/ambient_sessionstorer.go) interface. Notice you don't have to worry about the type of data. This makes it easy to read or write to any medium.
 
-```go
+```go title="ambient_datastorer.go"
 // DataStorer reads and writes data to an object.
 type DataStorer interface {
 	Save([]byte) error
 	Load() ([]byte, error)
 }
+```
 
+```go title="ambient_sessionstorer.go"
 // SessionStorer reads and writes data to an object.
 type SessionStorer interface {
 	Save([]byte) error

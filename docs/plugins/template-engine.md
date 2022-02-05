@@ -14,7 +14,7 @@ func (p *Plugin) TemplateEngine(logger ambient.Logger, injector ambient.AssetInj
 
 The function should take in both the Logger and [`AssetInjector`](https://github.com/ambientkit/ambient/blob/main/asset_injector.go).
 
-```go
+```go title="asset_injector.go"
 // AssetInjector represents code that can inject files into a template.
 type AssetInjector interface {
 	Inject(injector LayoutInjector, t *template.Template, r *http.Request,
@@ -26,7 +26,7 @@ type AssetInjector interface {
 
 The function should return an object that satisfies the [`Renderer`](https://github.com/ambientkit/ambient/blob/main/ambient_renderer.go) interface. The page and post allow you to define two different formats when rendering content so you can have the assets affect each differently.
 
-```go
+```go title="ambient_renderer.go"
 // Renderer represents a template renderer.
 type Renderer interface {
 	Page(w http.ResponseWriter, r *http.Request, assets embed.FS, templateName string,

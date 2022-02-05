@@ -2,16 +2,25 @@
 
 Ambient has a CLI app called [`amb`](https://github.com/ambientkit/amb) that allows you to create new projects and interact with running applications.
 
+
+Build the Ambient interactive CLI (amb) in the current folder.
+
 ```bash
-# Build the Ambient interactive CLI (amb) in the current folder.
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ambientkit/amb/main/bash/install.sh)"
+```
 
-# Run the app.
+Run the app.
+
+```bash
 ./amb
+```
 
-# Clone the ambient template by typing this command and pressing Enter.
-createapp
+Press `tab` to get a list of the available commands. The CLI supports auto-completion.
 
-# Exit by typing `exit` or pressing Ctrl+D.
+![amb CLI](/img/screenshots/amb.png)
+
+Exit by typing `exit` or pressing Ctrl+D.
+
+```bash
 exit
 ```

@@ -13,40 +13,71 @@ Let's discover Ambient in **less than 5 minutes**.
 
 ### Generate a Web App
 
-To build a full web app ([screenshots](https://github.com/ambientkit/ambient#screenshots)), run these commands:
+To build a full web app ([screenshots](https://github.com/ambientkit/ambient#screenshots)), run these commands.
+
+Build the Ambient interactive CLI (amb) in the current folder.
 
 ```bash
-# Build the Ambient interactive CLI (amb) in the current folder.
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ambientkit/amb/main/bash/install.sh)"
+```
 
-# Run the app.
+Run the app.
+
+```bash
 ./amb
+```
 
-# Clone the ambient template by typing this command and pressing Enter.
+Clone the ambient template by typing this command and pressing Enter.
+
+```bash
 createapp
+```
 
-# Exit by typing `exit` or pressing Ctrl+D.
+Exit by typing `exit` or pressing Ctrl+D.
+
+```bash
 exit
+```
 
-# Change to the new project folder.
+Change to the new project folder.
+
+```bash
 cd ambapp
+```
 
-# Create the .env file.
+Create the .env file.
+
+```bash
 make env
+```
 
-# Download the Go dependencies.
+Download the Go dependencies.
+
+```bash
 go mod download
+```
 
-# Generate a new private key.
+Generate a new private key.
+
+```bash
 make privatekey
+```
 
-# Generate a new password hash (replace with your password).
+Generate a new password hash (replace with your password).
+
+```bash
 make passhash passwordhere
+```
 
-# Create the session and site files in the storage folder.
+Create the session and site files in the storage folder.
+
+```bash
 make storage
+```
 
-# Start the webserver on port 8080 (local development with no Docker).
+Start the webserver on port 8080 (local development with no Docker).
+
+```bash
 make run-env
 ```
 
