@@ -46,6 +46,11 @@ const sidebars = {
         },
         {
           type: 'doc',
+          id: 'plugins/library',
+          label: 'Library',
+        },
+        {
+          type: 'doc',
           id: 'plugins/mvp',
           label: 'Your First Plugin (MVP)',
         },
