@@ -30,11 +30,22 @@ const sidebars = {
         'introduction/screenshots',
       ],
     },
-    // {
-    //   type: 'doc',
-    //   id: 'intro',
-    //   label: 'Introduction',
-    // },
+    {
+      type: 'category',
+      label: 'Architecture',
+      items: [
+        {
+          type: 'doc',
+          id: 'architecture/components',
+          label: 'Components',
+        },
+        {
+          type: 'doc',
+          id: 'architecture/barebones',
+          label: 'Barebones App',
+        },
+      ],
+    },
     {
       type: 'category',
       label: 'Plugins',
