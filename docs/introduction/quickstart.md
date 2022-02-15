@@ -45,34 +45,34 @@ Change to the new project folder.
 cd ambapp
 ```
 
-Create the .env file.
-
-```bash
-make env
-```
-
 Download the Go dependencies.
 
 ```bash
 go mod download
 ```
 
-Generate a new private key.
-
-```bash
-make privatekey
-```
-
-Generate a new password hash (replace with your password).
-
-```bash
-make passhash passwordhere
-```
-
 Create the session and site files in the storage folder.
 
 ```bash
 make storage
+```
+
+Create the .env file.
+
+```bash
+make env
+```
+
+Generate a new private key and append to your .env file.
+
+```bash
+make privatekey >> .env
+```
+
+Generate a new password hash (replace with your password) and append to your .env file.
+
+```bash
+make passhash passwordhere >> .env
 ```
 
 Start the webserver on port 8080 (local development with no Docker).
@@ -85,7 +85,7 @@ The login page is located at: `http://localhost:8080/login`
 
 To login, you'll need:
 
-- the default username is: `admin`
-- the password from the .env file for which the `AMB_PASSWORD_HASH` was derived
+- the default username: `admin`
+- the password from the `make passhash passwordhere` step. It's the value from the .env file for which the `AMB_PASSWORD_HASH` was derived.
 
 Once you are logged in, you should see a new menu option call `Plugins`. From this screen, you'll be able to use the Plugin Manager to make changes to state, permissions, and settings for all plugins.
