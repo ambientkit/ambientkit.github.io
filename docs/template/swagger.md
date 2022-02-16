@@ -14,7 +14,7 @@ Generate the Swagger spec: `swagger.json`.
 make swagger
 ```
 
-Serve the Swagger spec and open a browser window to view and make requests. You need to enable the `healthcheck` and `cors` plugins for this testable UI to function properly. You will also need the application running as well.
+Serve the Swagger spec and open a browser window to view and make requests. You need to enable the `healthcheck` and `cors` plugins for this testable UI to function properly. You will also need the app running as well.
 
 ```bash
 make swagger-serve

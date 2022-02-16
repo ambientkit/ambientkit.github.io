@@ -1,6 +1,6 @@
 # Storage System
 
-Ambient is a dynamic application that allows you make changes to it while it is running like enabling/disabling plugins, changing site information, etc. Those changes are stored in a JSON configuration object and then written to a storage system so it's persistent. Since there is a storage system, multiple instances of the application can run at the same time and access the same storage system to keep them consistent. This allows Ambient to support container and serverless architectures with ease because that storage system can be shared.
+Ambient is a dynamic app that allows you make changes to it while it is running like enabling/disabling plugins, changing site information, etc. Those changes are stored in a JSON configuration object and then written to a storage system so it's persistent. Since there is a storage system, multiple instances of the app can run at the same time and access the same storage system to keep them consistent. This allows Ambient to support container and serverless architectures with ease because that storage system can be shared.
 
 To protect the configuration, the storage system supports encryption so the JSON object is protected as it's saved.
 

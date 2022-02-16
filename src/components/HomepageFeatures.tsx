@@ -25,8 +25,8 @@ const FeatureList: FeatureItem[] = [
     image: '/img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Ambient helps you build applications with reusable plugins that have
-        security built-in so you focus on your application business logic.
+        Ambient helps you build apps with reusable plugins that have
+        security built-in so you focus on your business logic.
       </>
     ),
   },
@@ -36,7 +36,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Use or build plugins that satisfy interfaces and pass pre-built test suites
-        in your applications. You can also submit your plugins to the Marketplace (soon).
+        in your apps. You can also submit your plugins to the Marketplace (soon).
       </>
     ),
   },

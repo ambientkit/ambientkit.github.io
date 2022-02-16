@@ -8,7 +8,7 @@ Install `air` to the project bin folder.
 make air-install
 ```
 
-Start air to monitor code changes. The web app should be available at: http://localhost:8080
+Start air to monitor code changes. The app should be available at: http://localhost:8080
 
 ```bash
 air

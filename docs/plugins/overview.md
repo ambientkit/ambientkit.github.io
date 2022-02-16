@@ -4,7 +4,7 @@ Plugins are the building blocks for an Ambient web app. They must implement (sat
 
 ## Boot Process
 
-To help you understand how an Ambient web app works, this is the process it follows during boot:
+To help you understand how an Ambient app works, this is the process it follows during boot:
 
 - Load logger plugin by calling `Logger()` func.
 - Load storage plugin by calling `Storage()` func.
@@ -22,7 +22,7 @@ To help you understand how an Ambient web app works, this is the process it foll
 
 ## Plugin Loader
 
-To boot an Ambient web app, you will need to load plugins by populating the `ambient.PluginLoader` struct. The minimum plugins required to boot are covered in [Components](/docs/docs/architecture/components).
+To boot an Ambient app, you will need to load plugins by populating the `ambient.PluginLoader` struct. The minimum plugins required to boot are covered in [Components](/docs/docs/architecture/components).
 
 ## Considerations
 
@@ -35,11 +35,3 @@ A few things to note:
 - Logger, storage, template engine, and router won't have the `Enable()` func called so it will only be able to use parts of the toolkit that are passed in when their respective functions are called. You can also remove the `*ambient.PluginBase` and `*ambient.Toolkit` from the main struct since they won't be used. You can see [zaplogger](https://github.com/ambientkit/plugin/blob/main/logger/zaplogger/zaplogger.go) as an example.
 - Session manager should always have a middleware component to it so shouldn't be listed in the Plugins section, but it should be listed in the Middleware section. Be sure to define it only once and then use it as both a parameter for `ambient.PluginLoader.SessionManager` and `ambient.PluginLoader.Middleware`. You define it in middleware so you can control when it gets called relative to other middleware.
 - Plugin manager should be in the trusted plugins list since it's required to enable other plugins.
-
-## Tookit
-
-Almost all plugins have access to a toolkit that gives them access to approved services that they can use. TODO
-
-## Grants
-
-Granular read and write access must be explicitly requested by a plugin and then explicitly granted by the administrator of the application. TODO

@@ -1,6 +1,6 @@
 # amb
 
-Ambient has a CLI app called [`amb`](https://github.com/ambientkit/amb) that allows you to create new projects and interact with running applications.
+Ambient has a CLI app called [`amb`](https://github.com/ambientkit/amb) that allows you to create new projects and interact with running apps.
 
 
 Build the Ambient interactive CLI (amb) in the current folder.

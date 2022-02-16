@@ -1,6 +1,6 @@
 # Environment Variables
 
-Environment variables are one way to get information into the application at runtime. At a minimum, Ambient (more precisely the Session Manager) needs to have a session key so it can encrypt user sessions. Ambient is not opinioned about how you load the environment variables so you can load them from anywhere. We use the [`github.com/joho/godotenv`](https://github.com/joho/godotenv) package for reading from `.env` files.
+Environment variables are one way to get information into the app at runtime. At a minimum, Ambient (more precisely the Session Manager) needs to have a session key so it can encrypt user sessions. Ambient is not opinioned about how you load the environment variables so you can load them from anywhere. We use the [`github.com/joho/godotenv`](https://github.com/joho/godotenv) package for reading from `.env` files.
 
 You can also use the `envdetect.LoadDotEnv()` call to determine if `AMB_DOTENV=true` so you have control over when the `.env` file is loaded.
 
@@ -78,7 +78,7 @@ AMB_LOCAL=true
 
 ### Dev Console
 
-Enable the Dev Console so the `amb` CLI can interact with the application. You should not enable this in production. Default is: `false`
+Enable the Dev Console so the `amb` CLI can interact with the app. You should not enable this in production. Default is: `false`
 
 ```bash
 AMB_DEVCONSOLE_ENABLE=true

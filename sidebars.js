@@ -87,6 +87,16 @@ const sidebars = {
         },
         {
           type: 'doc',
+          id: 'plugins/toolkit',
+          label: 'Toolkit',
+        },
+        {
+          type: 'doc',
+          id: 'plugins/permissions',
+          label: 'Permission System (Grants)',
+        },
+        {
+          type: 'doc',
           id: 'plugins/library',
           label: 'Library',
         },

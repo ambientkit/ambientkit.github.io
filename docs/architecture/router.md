@@ -1,6 +1,6 @@
 # Router
 
-The router determines which handlers are called when a request hits the application based on HTTP method (GET, POST, DELETE, etc.) and URL. Every router handles routes a little differently so if you want to extend a router that already exists, it needs to meet the minimum requirements
+The router determines which handlers are called when a request hits the app based on HTTP method (GET, POST, DELETE, etc.) and URL. Every router handles routes a little differently so if you want to extend a router that already exists, it needs to meet the minimum requirements
 
 - must support parameters in URL paths: `/music/{band}/{song}`
 - parameters in URLs must be surrounded in braces - if they use the convention where they start with a colon (`/music/:band/:song`), you can use the [`paramconvert`](https://github.com/ambientkit/plugin/tree/main/pkg/paramconvert) package to make it compatible with Ambient

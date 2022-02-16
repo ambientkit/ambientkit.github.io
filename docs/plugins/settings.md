@@ -1,6 +1,6 @@
 # Settings
 
-The `Settings()` function returns a list of settings that can be edited from the pluginmanager UI.
+Every plugin is able to have their own settings that are editable through the Plugin Manager. The `Settings()` function returns a list of settings that can be edited from the pluginmanager UI.
 
 A [plugin](https://github.com/ambientkit/plugin/blob/main/generic/simplelogin/simplelogin.go) that has configurable settings should use MVP code as well as the `Settings()` function.
 

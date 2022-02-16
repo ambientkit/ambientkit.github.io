@@ -20,7 +20,7 @@ Initialize the Go module. You should swap out username for your GitHub username.
 go mod init github.com/username/ambapp
 ```
 
-Create the site file where the application configuration will be stored.
+Create the site file where the app configuration will be stored.
 
 ```bash
 echo '{}'> storage/site.bin
@@ -125,12 +125,12 @@ Download the dependencies - you can remove the last argument if running less tha
 go mod tidy -compat=1.17
 ```
 
-Start the application. `AMB_DOTENV=true` tells the application to load the session key from the `.env` file.
+Start the app. `AMB_DOTENV=true` tells the app to load the session key from the `.env` file.
 
 ```bash
 AMB_DOTENV=true go run main.go
 ```
 
-You should be able to access the application at: http://localhost:8080
+You should be able to access the app at: http://localhost:8080
 
-The application will output this message because there are no pages yet: `404 Darn, we cannot find the page.`
+The app will output this message because there are no pages yet: `404 Darn, we cannot find the page.`

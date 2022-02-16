@@ -1,6 +1,6 @@
 # Screenshots
 
-Below are screenshots of a full web app with links to the plugins to help explain the architecture.
+Below are screenshots of a full app with links to the plugins to help explain the architecture.
 
 The terminal shows the [logger plugin](https://github.com/ambientkit/plugin/tree/main/logger/zaplogger/zaplogger.go) that outputs based on log level.
 

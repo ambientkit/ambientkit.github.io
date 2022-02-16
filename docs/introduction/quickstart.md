@@ -1,6 +1,6 @@
 # Welcome!
 
-Ambient is a framework in Go for building web apps using plugins. You can use the plugins already included to stand up a blog just like the [Bear Blog](https://bearblog.dev/) or create your own plugins to build your own web app. Plugins can be enabled/disabled while the app is running which means routes as well as middleware can also modified without restarting the app. Plugins must be granted permissions above being enabled which provides you with better control over your web app.
+Ambient is a framework in Go for building web apps using plugins. You can use the plugins already included to stand up a blog just like the [Bear Blog](https://bearblog.dev/) or create your own plugins to build your own app. Plugins can be enabled/disabled while the app is running which means routes as well as middleware can also modified without restarting the app. Plugins must be granted permissions above being enabled which provides you with better control over your wapp.
 
 Let's discover Ambient in **less than 5 minutes**.
 
@@ -11,9 +11,9 @@ Let's discover Ambient in **less than 5 minutes**.
 - [Go](https://go.dev/doc/install) version 1.13 or above (module support).
 - You'll also need tools like [Git](https://git-scm.com/) and [Make](https://www.gnu.org/software/make/manual/make.html), but they are probably already installed.
 
-### Generate a Web App
+### Generate an App
 
-To build a full web app ([screenshots](/docs/docs/introduction/screenshots)), run these commands.
+To build a full app ([screenshots](/docs/docs/introduction/screenshots)), run these commands.
 
 Build the Ambient interactive CLI (amb) in the current folder.
 

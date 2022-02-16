@@ -1,6 +1,6 @@
 # Storage System
 
-A [storage system](https://github.com/ambientkit/plugin/blob/main/storage/gcpbucketstorage/gcpbucketstorage.go) stores the web app settings (title, content, scheme, URL, etc.) as well as plugin status (enabled/disabled), settings, and permissions granted.
+A [storage system](https://github.com/ambientkit/plugin/blob/main/storage/gcpbucketstorage/gcpbucketstorage.go) stores the app settings (title, content, scheme, URL, etc.) as well as plugin status (enabled/disabled), settings, and permissions granted.
 
 The storage system plugin must include the MVP code as well as the `Storage()` function.
 
