@@ -2,58 +2,6 @@
 
 Plugins are the building blocks for an Ambient web app. They must implement (satisfy) an interface to be usable by Ambient.
 
-## Plugin Loader
-
-To boot an Ambient web app, you will need to load plugins by populating the `ambient.PluginLoader` struct. The minimum plugins required to boot are:
-
-- logger
-- storage system
-- router
-- template engine
-- session manager
-
-Here is an example:
-
-```go
-import (
-	"log"
-	"os"
-
-	"github.com/ambientkit/ambient"
-	"github.com/ambientkit/plugin/router/awayrouter"
-	"github.com/ambientkit/plugin/sessionmanager/scssession"
-	"github.com/ambientkit/plugin/templateengine/htmlengine"
-)
-
-// Plugins defines the plugins.
-func Plugins() *ambient.PluginLoader {
-	// Get the environment variables.
-	secretKey := os.Getenv("AMB_SESSION_KEY")
-	if len(secretKey) == 0 {
-		log.Fatalf("app: environment variable missing: %v\n", "AMB_SESSION_KEY")
-	}
-
-	// Define the session manager so it can be used as a core plugin and
-	// middleware.
-	sessionManager := scssession.New(secretKey)
-
-	return &ambient.PluginLoader{
-		// Core plugins are implicitly trusted.
-		Router:         awayrouter.New(nil),
-		TemplateEngine: htmlengine.New(),
-		SessionManager: sessionManager,
-		// Trusted plugins are those that are typically needed to boot so they
-		// will be enabled and given full access.
-		TrustedPlugins: map[string]bool{},
-		Plugins:        []ambient.Plugin{},
-		Middleware: []ambient.MiddlewarePlugin{
-			// Middleware - executes bottom to top.
-			sessionManager, // Session manager middleware.
-		},
-	}
-}
-```
-
 ## Boot Process
 
 To help you understand how an Ambient web app works, this is the process it follows during boot:
@@ -72,9 +20,14 @@ To help you understand how an Ambient web app works, this is the process it foll
   - Wrap the middleware around the previous handler by calling `Middleware()` func and adding a conditional so it's only run if enabled in `site.bin` file.
 - Pass the handler to `ListenAndServe()` func.
 
-### Considerations
+## Plugin Loader
+
+To boot an Ambient web app, you will need to load plugins by populating the `ambient.PluginLoader` struct. The minimum plugins required to boot are covered in [Components](/docs/docs/architecture/components).
+
+## Considerations
 
 A few things to note:
+
 - An Ambient app can have a plugin enabled or disabled while it's running (through the pluginmanager). It will then load or unload the plugin making changes to routes, assets, and middleware.
 - When a change to the app is made or data is read or modified in `site.bin` file, the permissions of the plugin are checked first to ensure the user granted the plugin permissions to perform their action. The permissions are stored in the `site.bin` file.
 - Logger plugin and storage plugin are automatically trusted because they are loaded before the plugin system boots.
@@ -85,14 +38,8 @@ A few things to note:
 
 ## Tookit
 
-Almost all plugins have access to a toolkit that gives them access to approved services that they can use.
+Almost all plugins have access to a toolkit that gives them access to approved services that they can use. TODO
 
 ## Grants
 
-Granular read and write access must be explicitly requested by a plugin and then explicitly granted by the administrator of the application.
-
-## 
-
-TODO: Talk about the core plugins here.
-
-We'll walk you through creating a plugin in the next few pages.
+Granular read and write access must be explicitly requested by a plugin and then explicitly granted by the administrator of the application. TODO

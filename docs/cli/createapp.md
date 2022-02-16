@@ -1,6 +1,6 @@
 # createapp
 
-Create a new Ambient application on your computer.
+Create a new Ambient app on your computer.
 
 Create app with defaults. The [`ambient-template`](https://github.com/ambientkit/ambient-template) repo will be downloaded to a folder named `ambapp`.
 

@@ -41,6 +41,36 @@ const sidebars = {
         },
         {
           type: 'doc',
+          id: 'architecture/envars',
+          label: 'Environment Variables',
+        },
+        {
+          type: 'doc',
+          id: 'architecture/logger',
+          label: 'Logger',
+        },
+        {
+          type: 'doc',
+          id: 'architecture/storage',
+          label: 'Storage System',
+        },
+        {
+          type: 'doc',
+          id: 'architecture/router',
+          label: 'Router',
+        },
+        {
+          type: 'doc',
+          id: 'architecture/template-engine',
+          label: 'Template Engine',
+        },
+        {
+          type: 'doc',
+          id: 'architecture/session',
+          label: 'Session Manager',
+        },
+        {
+          type: 'doc',
           id: 'architecture/barebones',
           label: 'Barebones App',
         },
@@ -143,6 +173,11 @@ const sidebars = {
         },
         {
           type: 'doc',
+          id: 'cli/devconsole',
+          label: 'Dev Console',
+        },
+        {
+          type: 'doc',
           id: 'cli/createapp',
           label: 'createapp',
         },
@@ -186,11 +221,6 @@ const sidebars = {
           type: 'doc',
           id: 'template/swagger',
           label: 'Swagger Generation',
-        },
-        {
-          type: 'doc',
-          id: 'template/env',
-          label: 'Environment Variables',
         },
         {
           type: 'doc',

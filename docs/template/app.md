@@ -6,6 +6,8 @@ The app was modeled after the [Bear Blog](https://bearblog.dev/) by [Herman Mart
 
 To set up the app, follow the [Quickstart](/docs/docs/introduction/quickstart#getting-started) guide. The `amb` cli does support [creating projects from your own templates](/docs/docs/cli/createapp).
 
+The environment variables available are documented [here](/docs/docs/architecture/envars).
+
 :::tip Create your own template
 
 Feel free to fork the [`ambient-template`](https://github.com/ambientkit/ambient-template) repo and make changes or make a repo from scratch to better suit your needs.

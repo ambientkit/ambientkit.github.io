@@ -1,6 +1,6 @@
 # Barebones App
 
-Follow these steps to create a barebones Ambient application. These steps are intentionally verbose to help with the understanding.
+Follow these steps to create a barebones Ambient app. These steps are intentionally verbose to help with the understanding.
 
 Create a few folders.
 
