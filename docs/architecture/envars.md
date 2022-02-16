@@ -33,13 +33,13 @@ These environment variables are used through an Ambient app and can be used in p
 Session key to encrypt the cookie store. Generate with: `make privatekey`. This is not required, but suggested when using [ambient-template](https://github.com/ambientkit/ambient-template) because it's tied into the Makefile and the deployments to the cloud providers.
 
 ```env
-AMB_SESSION_KEY=b9e44f3b54a1a6e6b8062a40612240c00b91fbf3830f912b9db2b87c81967820
+AMB_SESSION_KEY=
 ```
 
 Password hash that is base64 encoded. Generate with: `make passhash passwordhere`. This is not required, but suggested when using [ambient-template](https://github.com/ambientkit/ambient-template) because it's tied into the Makefile and the deployments to the cloud providers.
 
 ```env
-AMB_PASSWORD_HASH=JDJhJDEwJGNYRGYxcU10WmFDaVR1ZXk3NDdqMWV2bFE0cm0yenE4anl5WTJxYlVQQktkY3p5RnFTUzUy
+AMB_PASSWORD_HASH=
 ```
 
 ### Optional
