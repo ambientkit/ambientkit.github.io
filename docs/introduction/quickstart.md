@@ -8,7 +8,7 @@ Let's discover Ambient in **less than 5 minutes**.
 
 ### What you'll need
 
-- [Go](https://go.dev/doc/install) version 1.13 or above (module support).
+- [Go](https://go.dev/doc/install) version 1.17 or above (module support).
 - You'll also need tools like [Git](https://git-scm.com/) and [Make](https://www.gnu.org/software/make/manual/make.html), but they are probably already installed.
 
 ### Generate an App
