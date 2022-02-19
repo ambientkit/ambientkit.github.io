@@ -109,13 +109,60 @@ func Plugins() *ambient.PluginLoader {
 		SessionManager: sessionManager,
 		// Trusted plugins are those that are typically needed to boot so they
 		// will be enabled and given full access.
-		TrustedPlugins: map[string]bool{},
-		Plugins:        []ambient.Plugin{},
+		TrustedPlugins: map[string]bool{
+			"hello": true,
+		},
+		Plugins: []ambient.Plugin{
+			NewHelloPlugin(),
+		},
 		Middleware: []ambient.MiddlewarePlugin{
 			// Middleware - executes bottom to top.
 			sessionManager, // Session manager middleware.
 		},
 	}
+}
+```
+
+Create a hello.go file.
+
+```go title="hello.go"
+package main
+
+import (
+	"net/http"
+
+	"github.com/ambientkit/ambient"
+)
+
+// Plugin represents an Ambient plugin.
+type Plugin struct {
+	*ambient.PluginBase
+}
+
+// NewHelloPlugin returns a new hello plugin.
+func NewHelloPlugin() *Plugin {
+	return &Plugin{
+		PluginBase: &ambient.PluginBase{},
+	}
+}
+
+// PluginName returns the plugin name.
+func (p *Plugin) PluginName() string {
+	return "hello"
+}
+
+// PluginVersion returns the plugin version.
+func (p *Plugin) PluginVersion() string {
+	return "1.0.0"
+}
+
+// Routes gets routes for the plugin.
+func (p *Plugin) Routes() {
+	p.Mux.Get("/", func(w http.ResponseWriter, r *http.Request) (status int, err error) {
+		return p.Toolkit.JSON(w, http.StatusOK, map[string]interface{}{
+			"message": "hello world!",
+		})
+	})
 }
 ```
 
@@ -128,9 +175,9 @@ go mod tidy -compat=1.17
 Start the app. `AMB_DOTENV=true` tells the app to load the session key from the `.env` file.
 
 ```bash
-AMB_DOTENV=true go run main.go
+AMB_DOTENV=true go run .
 ```
 
 You should be able to access the app at: http://localhost:8080
 
-The app will output this message because there are no pages yet: `404 Darn, we cannot find the page.`
+Your browser will output this message if everything was successful: `{"message":"hello world!"}`

@@ -15,3 +15,5 @@ It also contains these helper functions:
 - Path - URL with proper URL prefix
 - JSON - write JSON output to response writer
 - JSONPretty - write pretty JSON output to response writer
+
+The Toolkit is passed into plugins via the [`Enable()`](/docs/docs/plugins/enable) method.

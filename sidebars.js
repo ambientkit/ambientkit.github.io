@@ -167,6 +167,11 @@ const sidebars = {
         },
         {
           type: 'doc',
+          id: 'plugins/enable',
+          label: 'Enable & Disable',
+        },
+        {
+          type: 'doc',
           id: 'plugins/practices',
           label: 'Best Practices & FAQ',
         },
