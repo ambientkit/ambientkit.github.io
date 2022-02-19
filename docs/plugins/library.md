@@ -36,6 +36,7 @@ We've built out an initial library that you can use in your apps or you can fork
 - [etagcache](https://github.com/ambientkit/plugin/tree/main/middleware/etagcache) - supports [entity tag (ETag)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag)
 - [gzipresponse](https://github.com/ambientkit/plugin/tree/main/middleware/gzipresponse) - adds [gzip](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding) content compression to every response
 - [healthcheck](https://github.com/ambientkit/plugin/tree/main/middleware/healthcheck) - returns a 200 HTTP status code on endpoint `/api/healthcheck`
+- [jwt](https://github.com/ambientkit/plugin/tree/main/middleware/jwt) - supports JSON web tokens
 - [logrequest](https://github.com/ambientkit/plugin/tree/main/middleware/logrequest) - output `info` log with timestamp, remote address, HTTP method, and URL for every request
 - [notrailingslash](https://github.com/ambientkit/plugin/tree/main/middleware/notrailingslash) - strips trailing slashes from requests except on `/debug` endpoints to support [`http.pprof`](https://pkg.go.dev/net/http/pprof)
 - [proxyrequest](https://github.com/ambientkit/plugin/tree/main/middleware/proxyrequest) - adds [`reverse proxy`](https://pkg.go.dev/net/http/httputil#NewSingleHostReverseProxy) to support forwarding API and UI requests to separate URLs, ports, or microservices
@@ -57,6 +58,7 @@ We've built out an initial library that you can use in your apps or you can fork
 - [pluginmanager](https://github.com/ambientkit/plugin/tree/main/generic/pluginmanager) - adds a plugin management system that is available on the `/dashboard/plugins` endpoint
 - [prism](https://github.com/ambientkit/plugin/tree/main/generic/prism) - adds syntax highlighting using [Prism](https://prismjs.com/) to markdown code blocks
 - [robots](https://github.com/ambientkit/plugin/tree/main/generic/robots) - adds a simple `/robots.txt` endpoint for web crawlers
+- [rove](https://github.com/ambientkit/plugin/tree/main/generic/rove) - run [MySQL migrations](https://github.com/josephspurrier/rove) on a database
 - [rssfeed](https://github.com/ambientkit/plugin/tree/main/generic/rssfeed) - adds a [RSS feed](https://rss.com/blog/how-do-rss-feeds-work/) to the `/rss.xml` endpoint and adds a `link` tag to every template
 - [simplelogin](https://github.com/ambientkit/plugin/tree/main/generic/simplelogin) - adds a login page with MFA support and dashboard page to customize site meta data
 - [sitemap](https://github.com/ambientkit/plugin/tree/main/generic/sitemap) - adds a [Sitemap](https://www.sitemaps.org/protocol.html) to the `/sitemap.xml` endpoint
