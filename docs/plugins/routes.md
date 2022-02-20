@@ -15,7 +15,7 @@ func (p *Plugin) Routes() {
 }
 ```
 
-The function doesn't return any objects and shouldn't fail either. It also takes a special kind of HTTP handler - one that returns an HTTP status code and an error. A standard HTTP handler doesn't have any returns, but that makes it more difficult to standardize how to write out status codes and output errors so this new function definition improves on it.
+The function doesn't return any objects and shouldn't fail either. It also takes a special kind of HTTP handler - one that returns a HTTP status code and an error. A standard HTTP handler doesn't have any returns, but that makes it more difficult to standardize how to write out status codes and output errors so this new function definition improves on it.
 
 ```go
 // Home renders the home template.

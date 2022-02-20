@@ -66,7 +66,7 @@ func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) {
 }
 ```
 
-Ambient uses a [custom handler](https://github.com/ambientkit/plugin/blob/main/pkg/ambhandler/ambhandler.go) that requires a return of both an HTTP status code as well as an error (which can be nil).
+Ambient uses a [custom handler](https://github.com/ambientkit/plugin/blob/main/pkg/ambhandler/ambhandler.go) that requires a return of both a HTTP status code as well as an error (which can be nil).
 
 ```go title="plugin/pkg/ambhandler/ambhandler.go"
 // Handler represents an Ambient handler.
