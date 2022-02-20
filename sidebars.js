@@ -163,7 +163,7 @@ const sidebars = {
         {
           type: 'doc',
           id: 'plugins/funcmaps',
-          label: 'Funcmaps',
+          label: 'FuncMaps',
         },
         {
           type: 'doc',
