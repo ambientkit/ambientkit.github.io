@@ -44,6 +44,13 @@ AMB_PASSWORD_HASH=
 
 ### Optional
 
+Set the default log level to: `FATAL` (4), `ERROR` (3), `WARN` (2), `INFO` (1), `DEBUG` (0). The default is: INFO. You can use text or integers.
+
+```bash
+AMB_LOGLEVEL=DEBUG
+AMB_LOGLEVEL=0
+```
+
 Set the port the HTTP server will listen on. Default is: `8080`
 
 ```bash

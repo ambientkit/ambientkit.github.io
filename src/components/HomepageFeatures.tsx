@@ -2,6 +2,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
+import Link from '@docusaurus/Link';
 
 type FeatureItem = {
   title: string;
@@ -15,8 +16,9 @@ const FeatureList: FeatureItem[] = [
     image: '/img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Ambient was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Almost everything in Ambient is a <Link to="/docs/docs/plugins/mvp">plugin</Link>. Grab a few of
+        the <Link to="/docs/docs/plugins/library">pre-built plugins</Link> to get a
+        website up and running in no time.
       </>
     ),
   },
@@ -25,8 +27,9 @@ const FeatureList: FeatureItem[] = [
     image: '/img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Ambient helps you build apps with reusable plugins that have
-        security built-in so you focus on your business logic.
+        Ambient helps you build apps with reusable plugins that
+        have <Link to="/docs/docs/plugins/permissions">security built-in</Link> so
+        you focus on your business logic.
       </>
     ),
   },
@@ -35,8 +38,9 @@ const FeatureList: FeatureItem[] = [
     image: '/img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Use or build plugins that satisfy interfaces and pass pre-built test suites
-        in your apps. You can also submit your plugins to the Marketplace (soon).
+        Use or build plugins that satisfy interfaces, then
+        use <Link to="/docs/docs/plugins/router#test-suite">pre-built test suites</Link> and <Link to="/docs/docs/plugins/docgen">doc generation</Link> to
+        make things even easier. Marketplace coming soon!
       </>
     ),
   },

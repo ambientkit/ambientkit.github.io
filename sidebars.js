@@ -172,6 +172,11 @@ const sidebars = {
         },
         {
           type: 'doc',
+          id: 'plugins/docgen',
+          label: 'Doc Generation',
+        },
+        {
+          type: 'doc',
           id: 'plugins/practices',
           label: 'Best Practices',
         },
