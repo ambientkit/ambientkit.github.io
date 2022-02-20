@@ -1,12 +1,12 @@
 # Best Practices
 
-- Use the Ambient logger with all it's different levels: fatal, error, warn, info, and debug. You shouldn't use `log` or `fmt` package to output any messages because they are not standardized.
-- If you run background jobs in your plugin, make sure you implement the `Disable()` function to stop the background job.
-- When creating a funcmap, you must prefix each one with your plugin name so there are no collisions in the templates. An error message will be throw if any of the funcmaps are not named properly.
-- You must return every permission your plugin needs to use in the `GrantRequests()` function. Otherwise, the plugin will not work properly when enabled.
+- Use the Ambient logger with all it's different levels: error, warn, info, and debug. You shouldn't use `log` or `fmt` package to output any messages because they are not standardized.
+- Plugins should not cause the application to halt or exit. They should also return an error where possible.
+- If you run background jobs in your plugin, make sure you implement the`Enable()` function to start the background job and the `Disable()` function to stop the background job.
+- When creating a FuncMap, you must prefix each one with your plugin name and then an underscore - this is to prevent collisions in the templates. A prefix will be added automatically if you don't which may cause inconsistencies.
+- You must return every permission your plugin needs to use in the `GrantRequests()` function. Otherwise, the plugin will not be grant access to work properly.
 - Routes can be overwritten by other plugins so it's best to namespace with the plugin name since plugin names are unique.
-
-## FAQs
+- Use [`Path()`](/docs/docs/plugins/middleware#url-path) in middleware and [`{{URLPrefix}}`](/docs/docs/plugins/funcmaps#global-functions) in HTML templates so you always respect the `AMB_URL_PREFIX` environment variable. It is already prefixed on routes and assets so you don't need to modify them.
 
 **What should determine the plugin boundary?**
 

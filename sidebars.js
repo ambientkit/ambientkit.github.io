@@ -132,13 +132,13 @@ const sidebars = {
         },
         {
           type: 'doc',
-          id: 'plugins/router',
-          label: 'Router',
+          id: 'plugins/middleware',
+          label: 'Middleware',
         },
         {
           type: 'doc',
-          id: 'plugins/middleware',
-          label: 'Middleware',
+          id: 'plugins/router',
+          label: 'Router',
         },
         {
           type: 'doc',
@@ -173,7 +173,7 @@ const sidebars = {
         {
           type: 'doc',
           id: 'plugins/practices',
-          label: 'Best Practices & FAQ',
+          label: 'Best Practices',
         },
       ],
     },

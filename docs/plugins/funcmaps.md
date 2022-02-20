@@ -33,6 +33,28 @@ You can then call the FuncMap in a template like this:
 </html>
 ```
 
+## Global Functions
+
+These functions are always available in templates so don't try to overwrite them.
+
+`URLPrefix` returns the `AMB_URL_PREFIX` environment variable. Here is an example of how you would use it:
+
+```html
+<a href="{{URLPrefix}}/dashboard/posts/new">New post</a>
+```
+
+## Namespaces
+
+FuncMaps are global which means all of the maps are combined before rendering the template. To prevent collisions, each function must have a key that is prefixed with the name of the plugin. For instance, for the `disqus` plugin, all FuncMaps should start with `disqus_`.
+
+```go
+fm["disqus_PageURL"] = func() string {
+	return r.URL.Path
+}
+```
+
+If the key does not include the prefix of the plugin, Ambient will automatically add the prefix (`disqus_*`) so it's a best practice to include it for consistency.
+
 ## FuncMaps in Assets
 
 You can also use FuncMaps in the [`Assets()`](/docs/docs/plugins/assets) function since they are parsed as HTML templates.
