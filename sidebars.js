@@ -108,7 +108,7 @@ const sidebars = {
         {
           type: 'doc',
           id: 'plugins/types',
-          label: 'Types of Plugins',
+          label: 'Plugin Functions',
         },
         {
           type: 'doc',
