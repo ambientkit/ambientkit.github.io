@@ -129,7 +129,7 @@ function ShowcaseHeader() {
         target="_blank"
         rel="noreferrer">
         <Translate id="showcase.header.button">
-          🙏 Add your plugin
+          Add your plugin 🙏
         </Translate>
       </a>
     </section>
