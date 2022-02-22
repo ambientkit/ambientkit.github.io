@@ -13,7 +13,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Easy to Use',
-    image: '/img/undraw_docusaurus_mountain.svg',
+    image: '/img/undraw_monitor.svg',
     description: (
       <>
         Almost everything in Ambient is a <Link to="/docs/plugins/mvp">plugin</Link>. Grab a few of
@@ -24,7 +24,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Focus on What Matters',
-    image: '/img/undraw_docusaurus_tree.svg',
+    image: '/img/undraw_videographer.svg',
     description: (
       <>
         Ambient helps you build apps with reusable plugins that
@@ -35,7 +35,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Powered by Interfaces',
-    image: '/img/undraw_docusaurus_react.svg',
+    image: '/img/undraw_schedule.svg',
     description: (
       <>
         Use or build plugins that satisfy interfaces, then

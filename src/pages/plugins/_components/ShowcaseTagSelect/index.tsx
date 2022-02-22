@@ -13,10 +13,10 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import {useHistory, useLocation} from '@docusaurus/router';
-import {toggleListItem} from '@site/src/utils/jsUtils';
-import {prepareUserState} from '../../index';
-import type {TagType} from '@site/src/data/users';
+import { useHistory, useLocation } from '@docusaurus/router';
+import { toggleListItem } from '@site/src/utils/jsUtils';
+import { prepareUserState } from '../../index';
+import type { TagType } from '@site/src/data/plugins';
 
 import styles from './styles.module.css';
 
@@ -40,7 +40,7 @@ function replaceSearchTags(search: string, newTags: TagType[]) {
 }
 
 const ShowcaseTagSelect = React.forwardRef<HTMLLabelElement, Props>(
-  ({id, icon, label, tag, ...rest}, ref) => {
+  ({ id, icon, label, tag, ...rest }, ref) => {
     const location = useLocation();
     const history = useHistory();
     const [selected, setSelected] = useState(false);

@@ -17,9 +17,9 @@ import {
   Tags,
   TagList,
   type TagType,
-  type User,
+  type Plugin,
   type Tag,
-} from '@site/src/data/users';
+} from '@site/src/data/plugins';
 import { sortBy } from '@site/src/utils/jsUtils';
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(
@@ -58,7 +58,7 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
   );
 }
 
-const ShowcaseCard = memo(({ user }: { user: User }) => (
+const ShowcaseCard = memo(({ user }: { user: Plugin }) => (
   <li key={user.title} className="card shadow--md">
     {/* <div className={clsx('card__image', styles.showcaseCardImage)}>
       <Image img={user.preview} alt={user.title} />

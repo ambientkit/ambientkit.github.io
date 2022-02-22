@@ -20,12 +20,12 @@ import ShowcaseFilterToggle, {
 } from './_components/ShowcaseFilterToggle';
 import ShowcaseCard from './_components/ShowcaseCard';
 import {
-  sortedUsers,
+  sortedPlugins,
   Tags,
   TagList,
-  type User,
+  type Plugin,
   type TagType,
-} from '@site/src/data/users';
+} from '@site/src/data/plugins';
 import ShowcaseTooltip from './_components/ShowcaseTooltip';
 
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
@@ -38,7 +38,7 @@ import styles from './styles.module.css';
 const TITLE = 'Ambient Plugins';
 const DESCRIPTION = 'List of plugins that work with Ambient';
 const EDIT_URL =
-  'https://github.com/ambientkit/ambientkit.github.io/edit/main/src/data/users.tsx';
+  'https://github.com/ambientkit/ambientkit.github.io/edit/main/src/data/plugins.tsx';
 
 type UserState = {
   scrollTopPosition: number;
@@ -72,7 +72,7 @@ function readSearchName(search: string) {
 }
 
 function filterUsers(
-  users: User[],
+  users: Plugin[],
   selectedTags: TagType[],
   operator: Operator,
   searchName: string | null,
@@ -113,7 +113,7 @@ function useFilteredUsers() {
   }, [location]);
 
   return useMemo(
-    () => filterUsers(sortedUsers, selectedTags, operator, searchName),
+    () => filterUsers(sortedPlugins, selectedTags, operator, searchName),
     [selectedTags, operator, searchName],
   );
 }
@@ -207,10 +207,10 @@ function ShowcaseFilters() {
   );
 }
 
-const favoriteUsers = sortedUsers.filter((user) =>
+const favoriteUsers = sortedPlugins.filter((user) =>
   user.tags.includes('favorite'),
 );
-const otherUsers = sortedUsers.filter(
+const otherUsers = sortedPlugins.filter(
   (user) => !user.tags.includes('favorite'),
 );
 
@@ -269,7 +269,7 @@ function ShowcaseCards() {
 
   return (
     <section className="margin-top--lg margin-bottom--xl">
-      {filteredUsers.length === sortedUsers.length ? (
+      {filteredUsers.length === sortedPlugins.length ? (
         <>
           <div className={styles.showcaseFavorite}>
             <div className="container">
