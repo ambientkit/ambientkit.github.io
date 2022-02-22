@@ -1,6 +1,6 @@
 # Library
 
-We've built out an initial library that you can use in your apps or you can fork and modify to fit your needs.
+We've built out an [initial library](/docs/plugins) that you can use in your apps or you can fork and modify to fit your needs.
 
 ## Logger
 

@@ -38,7 +38,7 @@ import styles from './styles.module.css';
 const TITLE = 'Ambient Plugins';
 const DESCRIPTION = 'List of plugins that work with Ambient';
 const EDIT_URL =
-  'https://github.com/ambientkit/docs/edit/main/website/src/data/users.tsx';
+  'https://github.com/ambientkit/docs/edit/main/src/data/users.tsx';
 
 type UserState = {
   scrollTopPosition: number;
@@ -129,7 +129,7 @@ function ShowcaseHeader() {
         target="_blank"
         rel="noreferrer">
         <Translate id="showcase.header.button">
-          🙏 Please add your plugin
+          🙏 Add your plugin
         </Translate>
       </a>
     </section>

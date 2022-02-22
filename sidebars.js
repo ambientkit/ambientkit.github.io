@@ -78,7 +78,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Plugins',
+      label: 'Plugin Development',
       items: [
         {
           type: 'doc',
