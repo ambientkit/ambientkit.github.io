@@ -145,8 +145,8 @@ function useSiteCountPlural() {
         {
           id: 'showcase.filters.resultCount',
           description:
-            'Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
-          message: '1 site|{sitesCount} sites',
+            'Pluralized label for the number of plugins found in the library. Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
+          message: '1 plugin|{sitesCount} plugins',
         },
         { sitesCount },
       ),
@@ -226,7 +226,7 @@ function SearchBar() {
       <input
         id="searchbar"
         placeholder={translate({
-          message: 'Search for site name...',
+          message: 'Search for plugin name...',
           id: 'showcase.searchBar.placeholder',
         })}
         value={value ?? undefined}
@@ -295,7 +295,7 @@ function ShowcaseCards() {
           </div>
           <div className="container margin-top--lg">
             <h2 className={styles.showcaseHeader}>
-              <Translate id="showcase.usersList.allUsers">All sites</Translate>
+              <Translate id="showcase.usersList.allUsers">All plugins</Translate>
             </h2>
             <ul className={styles.showcaseList}>
               {otherUsers.map((user) => (
