@@ -1,6 +1,6 @@
 # Permission System (Grants)
 
-Granular read and write access must be explicitly requested by a plugin through a [grant request](/docs/docs/plugins/grants) and then explicitly approved by the administrator of the app in order for a plugin to get the permission required to make changes to the app configuration. The full list of grants available is [here](https://github.com/ambientkit/ambient/blob/main/model_grant.go).
+Granular read and write access must be explicitly requested by a plugin through a [grant request](/docs/plugins/grants) and then explicitly approved by the administrator of the app in order for a plugin to get the permission required to make changes to the app configuration. The full list of grants available is [here](https://github.com/ambientkit/ambient/blob/main/model_grant.go).
 
 Plugins are only allowed to interact with the Ambient app when:
 

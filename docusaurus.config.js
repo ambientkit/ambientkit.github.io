@@ -9,7 +9,7 @@ const config = {
   title: 'Ambient',
   tagline: 'Pluggable web framework in Go',
   url: 'https://ambientkit.github.io',
-  baseUrl: '/docs/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -25,13 +25,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/ambientkit/docs/blob/main/',
+          editUrl: 'https://github.com/ambientkit/ambientkit.github.io/blob/main/',
         },
         // blog: {
         //   showReadingTime: true,
         //   // Please change this to your repo.
         //   editUrl:
-        //     'https://github.com/ambientkit/docs/tree/main/packages/create-docusaurus/templates/shared/',
+        //     'https://github.com/ambientkit/ambientkit.github.io/tree/main/packages/create-docusaurus/templates/shared/',
         // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

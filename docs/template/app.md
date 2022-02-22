@@ -4,9 +4,9 @@ The [`ambient-template`](https://github.com/ambientkit/ambient-template) reposit
 
 The app was modeled after the [Bear Blog](https://bearblog.dev/) by [Herman Martinus](https://herman.bearblog.dev/).
 
-To set up the app, follow the [Quickstart](/docs/docs/introduction/quickstart#getting-started) guide. The `amb` cli does support [creating projects from your own templates](/docs/docs/cli/createapp).
+To set up the app, follow the [Quickstart](/docs/introduction/quickstart#getting-started) guide. The `amb` cli does support [creating projects from your own templates](/docs/cli/createapp).
 
-The environment variables available are documented [here](/docs/docs/architecture/envars).
+The environment variables available are documented [here](/docs/architecture/envars).
 
 :::tip Create your own template
 

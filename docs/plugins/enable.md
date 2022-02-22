@@ -7,7 +7,7 @@ The `Enable()` and `Disable()` functions are optional. They allow the plugin to 
 
 ## Enable
 
-The `Enable()` function handles the setting of the [Toolkit](/docs/docs/plugins/toolkit) so it's available for use in other functions. It's already set in the PluginBase so you don't have to redefine it:
+The `Enable()` function handles the setting of the [Toolkit](/docs/plugins/toolkit) so it's available for use in other functions. It's already set in the PluginBase so you don't have to redefine it:
 
 ```go title="base.go"
 // Enable is to enable the plugin. Toolkit should be saved.

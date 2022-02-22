@@ -16,6 +16,6 @@ The template engine also accepts an `AssetInjector` from Ambient which is extrem
 - embed CSS and JavaScript
 - inject HTML tags or elements to the `head`, `header`, `main`, `body`, and `footer` sections of a `Page` or `Post`
 - inject HTML templates or strings into a `Page` or `Post`
-- inject plugin `Settings` into strings or HTML templates using [`funcmaps`](/docs/docs/plugins/funcmaps)
+- inject plugin `Settings` into strings or HTML templates using [`funcmaps`](/docs/plugins/funcmaps)
 
-You can see examples of injecting assets [here](/docs/docs/plugins/assets).
+You can see examples of injecting assets [here](/docs/plugins/assets).

@@ -15,4 +15,4 @@ There are five routers in the library:
 - [jshttprouter](https://github.com/ambientkit/plugin/tree/main/router/jshttprouter) routing using fork of [`julienschmidt/httprouter`](https://github.com/ambientkit/httprouter) with [`paramconvert`](https://github.com/ambientkit/plugin/tree/main/pkg/paramconvert)
 - [patrouter](https://github.com/ambientkit/plugin/tree/main/router/patrouter) - routing using fork of [`bmizerany/pat`](https://github.com/ambientkit/pat) with [`paramconvert`](https://github.com/ambientkit/plugin/tree/main/pkg/paramconvert)
 
-The `awayrouter` is also used for the [Dev Console](/docs/docs/cli/devconsole).
+The `awayrouter` is also used for the [Dev Console](/docs/cli/devconsole).

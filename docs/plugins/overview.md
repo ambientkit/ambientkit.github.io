@@ -22,7 +22,7 @@ To help you understand how an Ambient app works, this is the process it follows 
 
 ## Plugin Loader
 
-To boot an Ambient app, you will need to load plugins by populating the `ambient.PluginLoader` struct. The minimum plugins required to boot are covered in [Components](/docs/docs/architecture/components).
+To boot an Ambient app, you will need to load plugins by populating the `ambient.PluginLoader` struct. The minimum plugins required to boot are covered in [Components](/docs/architecture/components).
 
 ## Considerations
 

@@ -28,4 +28,4 @@ It also contains these [helper](https://github.com/ambientkit/ambient/blob/main/
 - `JSON(w http.ResponseWriter, status int, response interface{}) (int, error)` - convert a struct or map to JSON and then send to the client
 - `JSONPretty(w http.ResponseWriter, status int, response interface{}) (int, error)` - same as JSON, but outputs it with indenting so it's in a more readable format
 
-The Toolkit is passed into plugins via the [`Enable()`](/docs/docs/plugins/enable) method.
+The Toolkit is passed into plugins via the [`Enable()`](/docs/plugins/enable) method.

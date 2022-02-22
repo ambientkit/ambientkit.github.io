@@ -8,7 +8,7 @@ Create app with defaults. The [`ambient-template`](https://github.com/ambientkit
 createapp
 ```
 
-You can also run by specifying your own arguments. This is helpful if you have your own [Ambient template](/docs/docs/template/app) you want to use.
+You can also run by specifying your own arguments. This is helpful if you have your own [Ambient template](/docs/template/app) you want to use.
 
 ```bash
 createapp -folder ambapp -template http://github.com/ambientkit/ambient-template

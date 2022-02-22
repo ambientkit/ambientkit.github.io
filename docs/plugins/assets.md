@@ -4,7 +4,7 @@ The `Assets()` function returns a list of assets that can modify the template ou
 
 A [plugin](https://github.com/ambientkit/plugin/blob/main/generic/simplelogin/simplelogin.go) that has assets should use MVP code as well as the `Assets()` function.
 
-You can also use [FuncMaps](/docs/docs/plugins/funcmaps) with assets because they are all parsed as HTML templates.
+You can also use [FuncMaps](/docs/plugins/funcmaps) with assets because they are all parsed as HTML templates.
 
 ## Required Fields
 
@@ -105,7 +105,7 @@ Content is a raw string that will inject into the HTML. `Path` must be empty for
 
 ### Replace
 
-Replace is a list of find and replace strings that are applied to the `Path` or `Content` when `Inline` is true. You can see an example [here](/docs/docs/plugins/assets#inline-javascript).
+Replace is a list of find and replace strings that are applied to the `Path` or `Content` when `Inline` is true. You can see an example [here](/docs/plugins/assets#inline-javascript).
 
 ## Usage Examples
 

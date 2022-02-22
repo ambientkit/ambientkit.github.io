@@ -13,7 +13,7 @@ Let's discover Ambient in **less than 5 minutes**.
 
 ### Generate an App
 
-To build a full app ([screenshots](/docs/docs/introduction/screenshots)), run these commands.
+To build a full app ([screenshots](/docs/introduction/screenshots)), run these commands.
 
 Build the Ambient interactive CLI (amb) in the current folder.
 

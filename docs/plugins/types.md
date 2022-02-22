@@ -2,11 +2,11 @@
 
 Ambient supports the following types of plugin functions via the [plugin interfaces](https://github.com/ambientkit/ambient/blob/main/ambient.go):
 
-- logger (includes [test suite](/docs/docs/plugins/logger#test-suite))
+- logger (includes [test suite](/docs/plugins/logger#test-suite))
 - storage system
-- session manager (includes [test suite](/docs/docs/plugins/session#test-suite))
+- session manager (includes [test suite](/docs/plugins/session#test-suite))
 - template engine
-- router (includes [test suite](/docs/docs/plugins/router#test-suite))
+- router (includes [test suite](/docs/plugins/router#test-suite))
 - middleware
 - routes
 - grant requests

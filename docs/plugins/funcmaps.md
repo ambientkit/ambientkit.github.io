@@ -57,7 +57,7 @@ If the key does not include the prefix of the plugin, Ambient will automatically
 
 ## FuncMaps in Assets
 
-You can also use FuncMaps in the [`Assets()`](/docs/docs/plugins/assets) function since they are parsed as HTML templates.
+You can also use FuncMaps in the [`Assets()`](/docs/plugins/assets) function since they are parsed as HTML templates.
 
 ```go title="plugin.go"
 // Assets returns a list of assets and an embedded filesystem.

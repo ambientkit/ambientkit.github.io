@@ -16,8 +16,8 @@ const FeatureList: FeatureItem[] = [
     image: '/img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Almost everything in Ambient is a <Link to="/docs/docs/plugins/mvp">plugin</Link>. Grab a few of
-        the <Link to="/docs/docs/plugins/library">pre-built plugins</Link> to get a
+        Almost everything in Ambient is a <Link to="/docs/plugins/mvp">plugin</Link>. Grab a few of
+        the <Link to="/docs/plugins/library">pre-built plugins</Link> to get a
         website up and running in no time.
       </>
     ),
@@ -28,7 +28,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Ambient helps you build apps with reusable plugins that
-        have <Link to="/docs/docs/plugins/permissions">security built-in</Link> so
+        have <Link to="/docs/plugins/permissions">security built-in</Link> so
         you focus on your business logic.
       </>
     ),
@@ -39,7 +39,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Use or build plugins that satisfy interfaces, then
-        use <Link to="/docs/docs/plugins/router#test-suite">pre-built test suites</Link> and <Link to="/docs/docs/plugins/docgen">doc generation</Link> to
+        use <Link to="/docs/plugins/router#test-suite">pre-built test suites</Link> and <Link to="/docs/plugins/docgen">doc generation</Link> to
         make things even easier.
       </>
     ),

@@ -9,7 +9,7 @@ Let's breakdown an Ambient web app. It needs a few things:
 - template engine
 - session manager
 
-You'll see a more complete code sample on the [Barebones App](/docs/docs/architecture/barebones) page, but this gives you an idea of how to populate the `PluginLoader{}` which is what an Ambient app requires along with the app name, app version, logger, and storage system:
+You'll see a more complete code sample on the [Barebones App](/docs/architecture/barebones) page, but this gives you an idea of how to populate the `PluginLoader{}` which is what an Ambient app requires along with the app name, app version, logger, and storage system:
 
 ```go
 import (

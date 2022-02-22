@@ -6,7 +6,7 @@
 - When creating a FuncMap, you must prefix each one with your plugin name and then an underscore - this is to prevent collisions in the templates. A prefix will be added automatically if you don't which may cause inconsistencies.
 - You must return every permission your plugin needs to use in the `GrantRequests()` function. Otherwise, the plugin will not be grant access to work properly.
 - Routes can be overwritten by other plugins so it's best to namespace with the plugin name since plugin names are unique.
-- Use [`Path()`](/docs/docs/plugins/middleware#url-path) in middleware and [`{{URLPrefix}}`](/docs/docs/plugins/funcmaps#global-functions) in HTML templates so you always respect the `AMB_URL_PREFIX` environment variable. It is already prefixed on routes and assets so you don't need to modify them.
+- Use [`Path()`](/docs/plugins/middleware#url-path) in middleware and [`{{URLPrefix}}`](/docs/plugins/funcmaps#global-functions) in HTML templates so you always respect the `AMB_URL_PREFIX` environment variable. It is already prefixed on routes and assets so you don't need to modify them.
 - to protect against cross-site request forgery, use `p.Site.SetCSRF(r)` and `p.Site.CSRF(r, r.FormValue("token"))` to set and verify tokens on form submission.
 
 **What should determine the plugin boundary?**
