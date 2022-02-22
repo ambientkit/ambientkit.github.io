@@ -40,7 +40,7 @@ const FeatureList: FeatureItem[] = [
       <>
         Use or build plugins that satisfy interfaces, then
         use <Link to="/docs/docs/plugins/router#test-suite">pre-built test suites</Link> and <Link to="/docs/docs/plugins/docgen">doc generation</Link> to
-        make things even easier. Marketplace coming soon!
+        make things even easier.
       </>
     ),
   },
