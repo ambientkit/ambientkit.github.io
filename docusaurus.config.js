@@ -7,14 +7,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Ambient',
-  tagline: 'Pluggable web framework in Go',
+  tagline: 'Pluggable Web Framework in Go',
   url: 'https://ambientkit.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'ambientkit', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
+  projectName: 'ambientkit.github.io', // Usually your repo name.
   trailingSlash: false,
   plugins: [],
   presets: [

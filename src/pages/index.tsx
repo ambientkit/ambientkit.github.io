@@ -29,7 +29,7 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
+      title="Pluggable Web Framework in Go"
       description="Pluggable web framework in Go">
       <HomepageHeader />
       <main>
