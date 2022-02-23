@@ -14,7 +14,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'ambientkit', // Usually your GitHub org/user name.
-  projectName: 'ambientkit.github.io', // Usually your repo name.
+  projectName: 'docs', // Usually your repo name.
   trailingSlash: false,
   plugins: [],
   presets: [
