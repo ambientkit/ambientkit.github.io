@@ -27,7 +27,7 @@ Run the app.
 ./amb
 ```
 
-Clone the ambient template by typing this command and pressing Enter.
+Clone the [ambient-template](https://github.com/ambientkit/ambient-template) by typing this command and pressing Enter.
 
 ```bash
 createapp
