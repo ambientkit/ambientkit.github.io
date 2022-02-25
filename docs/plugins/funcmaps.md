@@ -20,7 +20,7 @@ func (p *Plugin) FuncMap() func(r *http.Request) template.FuncMap {
 }
 ```
 
-Your handler should pass in `p.FuncMap()(r)` so the template can use it.
+Your handler should pass in `p.FuncMap()` so the template can use it.
 
 ```go title="plugin_route.go"
 func (p *Plugin) welcomeView(w http.ResponseWriter, r *http.Request) (status int, err error) {
@@ -30,7 +30,7 @@ func (p *Plugin) welcomeView(w http.ResponseWriter, r *http.Request) (status int
 }
 ```
 
-You can then call the FuncMap in a template like this:
+You can then call the FuncMap in a template.
 
 ```html title="template/view.html"
 <h1>{{.title}}</h1>
