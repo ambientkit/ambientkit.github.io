@@ -2,10 +2,12 @@
 
 FuncMaps are how you can call functions in HTML templates to return data. They are a map of functions that can take in parameters. You can read more about them with examples [here](https://pkg.go.dev/text/template#FuncMap).
 
-The `FuncMap()` function should accept an http.Request and then return a `template.FuncMap`. The reason it accepts a request is sometimes information around the current user or request is needed by the functions. Below is an example of how to return a page URL to a template.
+The `FuncMap()` function should return a callable function that accepts an http.Request and then returns a `template.FuncMap`. The reason it accepts a request is sometimes information around the current user or request is needed by the functions.
+
+Below is an example of how to define a FuncMap.
 
 ```go title="plugin.go"
-// FuncMap returns a callable function when passed in a request.
+// FuncMap returns a callable function that accepts a request.
 func (p *Plugin) FuncMap() func(r *http.Request) template.FuncMap {
 	return func(r *http.Request) template.FuncMap {
 		fm := make(template.FuncMap)
@@ -18,19 +20,21 @@ func (p *Plugin) FuncMap() func(r *http.Request) template.FuncMap {
 }
 ```
 
+Your handler should pass in `p.FuncMap()(r)` so the template can use it.
+
+```go title="plugin_route.go"
+func (p *Plugin) welcomeView(w http.ResponseWriter, r *http.Request) (status int, err error) {
+	vars := make(map[string]interface{})
+	vars["title"] = "Welcome"
+	return p.Render.Page(w, r, assets, "template/view", p.FuncMap(), vars)
+}
+```
+
 You can then call the FuncMap in a template like this:
 
-```html title="template.html"
-<!DOCTYPE html>
-<html lang="en">
-<head>
-</head>
-<body>
-    <main>
-		The page URL is: {{disqus_PageURL}}
-    </main>
-</body>
-</html>
+```html title="template/view.html"
+<h1>{{.title}}</h1>
+<p>The page URL is: {{disqus_PageURL}}</p>
 ```
 
 ## Global Functions
@@ -84,7 +88,7 @@ func (p *Plugin) Assets() ([]ambient.Asset, *embed.FS) {
 	return arr, &assets
 }
 
-// FuncMap returns a callable function when passed in a request.
+// FuncMap returns a callable function that accepts a request.
 func (p *Plugin) FuncMap() func(r *http.Request) template.FuncMap {
 	return func(r *http.Request) template.FuncMap {
 		fm := make(template.FuncMap)
