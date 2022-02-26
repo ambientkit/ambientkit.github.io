@@ -156,7 +156,14 @@ func (p *Plugin) PluginVersion() string {
 	return "1.0.0"
 }
 
-// Routes gets routes for the plugin.
+// GrantRequests returns a list of grants requested by the plugin.
+func (p *Plugin) GrantRequests() []ambient.GrantRequest {
+	return []ambient.GrantRequest{
+		{Grant: ambient.GrantRouterRouteWrite, Description: "Access to create default route."},
+	}
+}
+
+// Routes sets routes for the plugin.
 func (p *Plugin) Routes() {
 	p.Mux.Get("/", func(w http.ResponseWriter, r *http.Request) (status int, err error) {
 		return p.Toolkit.JSON(w, http.StatusOK, map[string]interface{}{

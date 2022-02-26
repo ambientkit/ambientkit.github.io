@@ -5,7 +5,7 @@ The `Routes()` function registers HTTP handlers with the router.
 A [plugin with routes](https://github.com/ambientkit/plugin/blob/main/generic/simplelogin/simplelogin.go) defined must include the MVP code as well as the `Routes()` function.
 
 ```go
-// Routes gets routes for the plugin.
+// Routes sets routes for the plugin.
 func (p *Plugin) Routes() {
 	p.Mux.Get("/", p.home)
 	p.Mux.Get("/login", p.login)
