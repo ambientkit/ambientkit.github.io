@@ -23,7 +23,7 @@ go mod init github.com/username/ambapp
 Create the site file where the app configuration will be stored.
 
 ```bash
-echo '{}'> storage/site.bin
+touch storage/site.bin
 ```
 
 Create the session file where the user sessions will be stored.
