@@ -1,10 +1,10 @@
 # Logger
 
 Developing a logging strategy is a good practice when you start building an app because it will help you develop and troubleshoot more quickly. Ambient supports the following log levels in plugins:
-- Debug
-- Info
-- Warn
-- Error
+- **Debug** - detailed tracing for use by app developers. Examples: when a function is called, detailed error messages, loop logic, etc.
+- **Info** - informational messages for end users and system administrators. Examples: enabling a plugin, starting web server, etc.
+- **Warn** - potentially harmful situation for end users and system administrators. Examples: plugin denied access because it's missing a grant, etc.
+- **Error** - error occurred that will affect program execution. Examples: plugin not found, cannot enable plugin, etc.
 
 There is also a `Fatal` log level that is available to only the core Ambient app because a plugin should not have the ability to terminate the app.
 
