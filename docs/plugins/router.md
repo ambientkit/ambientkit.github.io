@@ -19,7 +19,6 @@ func (p *Plugin) Router(logger ambient.Logger, te ambient.Renderer) (ambient.App
 
 The function should:
 - return an object that satisfies the [`AppRouter`](https://github.com/ambientkit/ambient/blob/main/ambient_router.go) interface.
-  - **Note:** the router needs to support clearing routes which may require extending popular router packages. You can see how this was done with: [julienschmidt/httprouter](https://github.com/ambientkit/httprouter), [gorilla/mux](https://github.com/ambientkit/mux), and [bmizerany/pat](https://github.com/ambientkit/pat).
 - support wildcards in routes using braces: `/url/{param}`
   - if the router uses the alternative "colon" parameters (`/url/:param`), you can use the [paramconvert](https://github.com/ambientkit/plugin/blob/main/pkg/paramconvert/paramconvert.go) package. An example of it's usage is [here](https://github.com/ambientkit/plugin/blob/main/router/jshttprouter/router/method.go#L11).
 

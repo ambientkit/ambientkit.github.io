@@ -148,7 +148,7 @@ const Plugins: Plugin[] = [
   },
   {
     title: "awayrouter",
-    description: "Package awayrouter is an Ambient plugin for a router using a variation of the way router.",
+    description: "Package awayrouter is an Ambient plugin for a router using a variation of the matryer/way router.",
     website: "https://github.com/matryer/way",
     source: "https://github.com/ambientkit/plugin/tree/main/router/awayrouter",
     tags: ["opensource", "standard", "router", "favorite"],
