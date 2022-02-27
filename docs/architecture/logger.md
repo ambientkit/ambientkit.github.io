@@ -15,6 +15,7 @@ import (
 	"log"
 
 	"github.com/ambientkit/ambient"
+	"github.com/ambientkit/ambient/pkg/ambientapp"
 	"github.com/ambientkit/ambient-template/cmd/myapp/app"
 	"github.com/ambientkit/plugin/logger/zaplogger"
 	"github.com/ambientkit/plugin/storage/localstorage"
@@ -24,7 +25,7 @@ func main() {
 	// ...
 	// Create the ambient app.
 	plugins := app.Plugins()
-	ambientApp, logger, err := ambient.NewApp("myapp", "1.0",
+	ambientApp, logger, err := ambientapp.NewApp("myapp", "1.0",
 		zaplogger.New(),
 		ambient.StoragePluginGroup{
 			Storage: localstorage.New("storage/site.bin", "storage/session.bin"),

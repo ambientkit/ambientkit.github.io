@@ -50,6 +50,7 @@ import (
 	"os"
 
 	"github.com/ambientkit/ambient"
+	"github.com/ambientkit/ambient/pkg/ambientapp"
 	"github.com/ambientkit/ambient/pkg/envdetect"
 	"github.com/ambientkit/plugin/logger/zaplogger"
 	"github.com/ambientkit/plugin/router/awayrouter"
@@ -70,7 +71,7 @@ func main() {
 
 	// Create the ambient app.
 	plugins := Plugins()
-	ambientApp, logger, err := ambient.NewApp("myapp", "1.0",
+	ambientApp, logger, err := ambientapp.NewApp("myapp", "1.0",
 		zaplogger.New(),
 		ambient.StoragePluginGroup{
 			Storage: localstorage.New("storage/site.bin", "storage/session.bin"),
