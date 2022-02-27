@@ -12,9 +12,9 @@ func (p *Plugin) TemplateEngine(logger ambient.Logger, injector ambient.AssetInj
 }
 ```
 
-The function should take in both the Logger and [`AssetInjector`](https://github.com/ambientkit/ambient/blob/main/asset_injector.go).
+The function should take in both the Logger and [`AssetInjector`](https://github.com/ambientkit/ambient/blob/main/ambient_injector.go).
 
-```go title="asset_injector.go"
+```go title="ambient_injector.go"
 // AssetInjector represents code that can inject files into a template.
 type AssetInjector interface {
 	Inject(injector LayoutInjector, t *template.Template, r *http.Request,

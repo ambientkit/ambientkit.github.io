@@ -21,7 +21,7 @@ The types of plugins that don't have access to the toolkit are:
 
 ## Helpers
 
-It also contains these [helper](https://github.com/ambientkit/ambient/blob/main/ambient_toolkit.go) functions:
+It also contains these [helper](https://github.com/ambientkit/ambient/blob/main/toolkit.go) functions:
 
 - `Redirect(w http.ResponseWriter, r *http.Request, url string, code int)` - redirects to new URL
 - `Path(url string) string` - returns a URL with proper URL prefix based on the `AMB_URL_PREFIX` environment variable; this should be used in middleware when comparing paths. You can see examples in [notrailingslash](https://github.com/ambientkit/plugin/blob/main/middleware/notrailingslash/notrailingslash.go) and [securedashboard](https://github.com/ambientkit/plugin/blob/main/middleware/securedashboard/securedashboard.go)

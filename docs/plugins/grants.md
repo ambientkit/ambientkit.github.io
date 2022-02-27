@@ -32,7 +32,7 @@ func (p *Plugin) GrantRequests() []ambient.GrantRequest {
 }
 ```
 
-The function returns a `[]GrantRequest` object. You can see the full list of permissions in [model_grant.go](https://github.com/ambientkit/ambient/blob/main/model_grant.go). Even trusted plugins need to request permissions.
+The function returns a `[]GrantRequest` object. You can see the full list of permissions in [grant.go](https://github.com/ambientkit/ambient/blob/main/grant.go). Even trusted plugins need to request permissions.
 
 ## Denied Message
 
