@@ -1,6 +1,6 @@
 # Template Engine
 
-The template engine is what parses, and modifies, and organizes HTML content before it's sent back to the requesting client. It provides a lot of the extensibility that makes the Ambient plugin architecture possible. If you are returning JSON or XML, you won't need to use the template engine.
+The template engine is what parses, modifies, and organizes HTML content before it's sent back to the requesting client. It provides a lot of the extensibility that makes the Ambient plugin architecture possible. If you are returning JSON or XML, you won't need to use the template engine.
 
 The template engine plugin, [htmlengine](https://github.com/ambientkit/plugin/tree/main/templateengine/htmlengine), uses the Go standard library, [`html/template`](https://pkg.go.dev/html/template), and provides a few nice features:
 
