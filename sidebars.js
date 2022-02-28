@@ -203,6 +203,11 @@ const sidebars = {
         },
         {
           type: 'doc',
+          id: 'cli/createplugin',
+          label: 'createplugin',
+        },
+        {
+          type: 'doc',
           id: 'cli/enable',
           label: 'enable',
         },
