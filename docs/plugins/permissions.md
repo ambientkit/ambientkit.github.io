@@ -8,4 +8,39 @@ Plugins are only allowed to interact with the Ambient app when:
 2. plugin requests a grant
 3. administrator approves the grant request
 
-The only other way a plugin can run without the three step process above is if the plugin is listed as a Trusted Plugin. The core plugins (logger, storage engine, router, template engine, and session manager) do not need to be added to the trusted plugin list because the app cannot function without them so they are trusted implicitly.
+## Trusted Plugins
+
+When plugins are trusted, the will be enabled and all of their grants will be approved automatically. You also cannot disable the plugins when they are trusted.
+
+The core plugins (logger, storage engine, router, template engine, and session manager) do not need to be added to the trusted plugin list because the app cannot function without them so they are trusted implicitly.
+
+You can see an example below of how to add your plugin as well as mark it as trusted.
+
+```go
+import (
+	"log"
+	"os"
+
+	"github.com/ambientkit/ambient"
+	"github.com/yourname/mvp"
+)
+
+// Plugins defines the plugins.
+func Plugins() *ambient.PluginLoader {
+	return &ambient.PluginLoader{
+		// Core plugins are implicitly trusted.
+		Router:         nil,
+		TemplateEngine: nil,
+		SessionManager: nil,
+		// Trusted plugins are those that are typically needed to boot so they
+		// will be enabled and given full access.
+		TrustedPlugins: map[string]bool{
+			"mvp":   true, // Your plugin is trusted here.
+		},
+		Plugins: []ambient.Plugin{
+			mvp.New(), // Your plugin is included here.
+		},
+		Middleware: []ambient.MiddlewarePlugin{},
+	}
+}
+```
