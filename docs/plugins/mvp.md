@@ -1,6 +1,11 @@
 # Minimum Viable Plugin (MVP)
 
-To create the smallest package that can be used as a plugin, you can paste this code into a new file like this: `plugin/mvp/mvp.go`:
+Plugins don't need to be in their own package, but it's a good way to define boundaries. The [`*ambient.PluginBase`](https://github.com/ambientkit/ambient/blob/main/base.go) object provides a couple benefits:
+
+- mostly satisfies the [`Plugin`](https://github.com/ambientkit/ambient/blob/main/ambient.go) interface so you don't have to define all the empty functions (you will still need to define `PluginName()` and `PluginVersion()` before it's fully satisfied)
+- provides an `Enable()` function that stores the Toolkit so it can be used by other functions - you can read more about that [here](/docs/plugins/enable)
+
+To create the smallest package that can be used as a plugin, you can paste this code into a new file like this: `plugin/mvp/mvp.go`.
 
 ```go
 // Package mvp provides a template for building a plugin for Ambient apps.
@@ -28,9 +33,9 @@ func New() *Plugin {
 	}
 }
 
-// PluginName returns the plugin name. This name should match the package name.
-// PluginName should be globally unique. Only lowercase letters, numbers,
-// and underscores are permitted. Must start with with a letter.
+// PluginName returns the plugin name. PluginName should be globally unique.
+// It must start with a lowercase letter and then contain only lowercase letters
+// and numbers.
 func (p *Plugin) PluginName() string {
 	return "mvp"
 }
@@ -89,4 +94,4 @@ func Plugins() *ambient.PluginLoader {
 }
 ```
 
-When you start the app, the plugin will not be enabled. You must login and then navigate to: http://localhost:8080/dashboard/plugins. Put a checkmark next to the plugin and then click the **Save** button at the bottom of the page. Your plugin is now enabled! It doesn't do anything so don't get too excited, but you've got the scaffolding of a plugin so on to the next step where you choose the type of plugin function to use.
+When you start the app, the plugin will not be enabled. You must login and then navigate to: http://localhost:8080/dashboard/plugins. Put a checkmark next to the plugin and then click the **Save** button at the bottom of the page. Your plugin is now enabled! It doesn't do anything so don't get too excited, but you've got the scaffolding of a plugin so on to the next step where you choose the type of plugin to implement.
