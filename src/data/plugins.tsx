@@ -280,6 +280,13 @@ const Plugins: Plugin[] = [
     tags: ["opensource", "standard", "templateengine"],
   },
   {
+    title: "htmx",
+    description: "Package htmx is an Ambient plugin that adds the htmx JavaScript library to all pages: https://htmx.org/.",
+    website: "https://htmx.org/",
+    source: "https://github.com/ambientkit/plugin/tree/main/generic/htmx",
+    tags: ["opensource", "standard", "generic"],
+  },
+  {
     title: "jshttprouter",
     description: "Package jshttprouter is an Ambient plugin for a router using julienschmidt/httprouter.",
     website: "https://github.com/julienschmidt/httprouter",

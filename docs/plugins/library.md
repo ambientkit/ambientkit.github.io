@@ -55,6 +55,7 @@ We've built out an [initial library](/plugins) that you can use in your apps or 
 - [disqus](https://github.com/ambientkit/plugin/tree/main/generic/disqus) - adds [Disqus](https://disqus.com/) comment blocks to all Post layouts
 - [envinfo](https://github.com/ambientkit/plugin/tree/main/generic/envinfo) - adds a page at `/dashboard/env` that displays all server environment variables
 - [googleanalytics](https://github.com/ambientkit/plugin/tree/main/generic/googleanalytics) - adds [Google Analytics](https://analytics.google.com/) tracking code to every template
+- [htmx](https://github.com/ambientkit/plugin/tree/main/generic/htmx) - adds the [htmx](https://htmx.org/) JavaScript library to all pages
 - [pluginmanager](https://github.com/ambientkit/plugin/tree/main/generic/pluginmanager) - adds a plugin management system that is available on the `/dashboard/plugins` endpoint
 - [prism](https://github.com/ambientkit/plugin/tree/main/generic/prism) - adds syntax highlighting using [Prism](https://prismjs.com/) to markdown code blocks
 - [robots](https://github.com/ambientkit/plugin/tree/main/generic/robots) - adds a simple `/robots.txt` endpoint for web crawlers
