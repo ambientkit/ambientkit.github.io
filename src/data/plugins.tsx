@@ -245,6 +245,13 @@ const Plugins: Plugin[] = [
     tags: ["opensource", "standard", "middleware"],
   },
   {
+    title: "foundation",
+    description: "Package foundation is an Ambient plugin that adds the Foundation library to all pages.",
+    website: "https://get.foundation/",
+    source: "https://github.com/ambientkit/plugin/tree/main/generic/foundation",
+    tags: ["opensource", "standard", "generic"],
+  },
+  {
     title: "gcpbucketstorage",
     description: "Package gcpbucketstorage is an Ambient plugin that provides storage in GCP Cloud Storage.",
     website: "https://github.com/ambientkit/plugin/tree/main/storage/gcpbucketstorage",
@@ -299,6 +306,13 @@ const Plugins: Plugin[] = [
     website: "https://github.com/julienschmidt/httprouter",
     source: "https://github.com/ambientkit/plugin/tree/main/router/jshttprouter",
     tags: ["opensource", "standard", "router"],
+  },
+  {
+    title: "jquery",
+    description: "Package jquery is an Ambient plugin that adds the jQuery library to all pages.",
+    website: "https://jquery.com/",
+    source: "https://github.com/ambientkit/plugin/tree/main/generic/jquery",
+    tags: ["opensource", "standard", "generic"],
   },
   {
     title: "jwt",
