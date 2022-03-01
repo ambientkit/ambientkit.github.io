@@ -65,4 +65,5 @@ We've built out an [initial library](/plugins) that you can use in your apps or 
 - [sitemap](https://github.com/ambientkit/plugin/tree/main/generic/sitemap) - adds a [Sitemap](https://www.sitemaps.org/protocol.html) to the `/sitemap.xml` endpoint
 - [stackedit](https://github.com/ambientkit/plugin/tree/main/generic/stackedit) - adds the in-browser markdown editor, [StackEdit](https://stackedit.io/), to all textfields with the `id_content` ID. Built for use with the `bearblog` plugin
 - [styles](https://github.com/ambientkit/plugin/tree/main/generic/styles) - adds configurable Favicon and CSS styles to all templates
+- [tailwindcss](https://github.com/ambientkit/plugin/tree/main/generic/tailwindcss) - adds the [tailwindcss](https://tailwindcss.com/) library to all pages
 - [viewport](https://github.com/ambientkit/plugin/tree/main/generic/viewport) - adds a mobile-optimized [viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) meta tag to all HTML templates

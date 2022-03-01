@@ -281,7 +281,7 @@ const Plugins: Plugin[] = [
   },
   {
     title: "htmx",
-    description: "Package htmx is an Ambient plugin that adds the htmx JavaScript library to all pages: https://htmx.org/.",
+    description: "Package htmx is an Ambient plugin that adds the htmx JavaScript library to all pages.",
     website: "https://htmx.org/",
     source: "https://github.com/ambientkit/plugin/tree/main/generic/htmx",
     tags: ["opensource", "standard", "generic"],
@@ -438,6 +438,13 @@ const Plugins: Plugin[] = [
     description: "Package styles is an Ambient plugin that provides a page to edit styles.",
     website: "https://github.com/ambientkit/plugin/tree/main/generic/styles",
     source: "https://github.com/ambientkit/plugin/tree/main/generic/styles",
+    tags: ["opensource", "standard", "generic"],
+  },
+  {
+    title: "tailwindcss",
+    description: "Package tailwindcss is an Ambient plugin that adds the tailwindcss library to all pages.",
+    website: "https://tailwindcss.com/",
+    source: "https://github.com/ambientkit/plugin/tree/main/generic/tailwindcss",
     tags: ["opensource", "standard", "generic"],
   },
   {
