@@ -49,6 +49,7 @@ We've built out an [initial library](/plugins) that you can use in your apps or 
 - [author](https://github.com/ambientkit/plugin/tree/main/generic/author) - adds a configurable [author](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#adding_an_author_and_description) meta tag to all HTML templates
 - [bearblog](https://github.com/ambientkit/plugin/tree/main/generic/bearblog) - provides [Bear Blog](https://bearblog.dev/) like functionality for simple, markdown based articles
 - [bearcss](https://github.com/ambientkit/plugin/tree/main/generic/bearcss) - adds CSS styling based on the [Bear Blog](https://bearblog.dev/)
+- [bootstrap](https://github.com/ambientkit/plugin/tree/main/generic/bootstrap) - adds the [Bootstrap](https://getbootstrap.com/) library to all pages
 - [charset](https://github.com/ambientkit/plugin/tree/main/generic/charset) - adds a configurable [charset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta) meta tag to all HTML templates
 - [debugpprof](https://github.com/ambientkit/plugin/tree/main/generic/debugpprof) - enables [`http.pprof`](https://pkg.go.dev/net/http/pprof) for HTTP server runtime profiling on `/debug/pprof` endpoints
 - [description](https://github.com/ambientkit/plugin/tree/main/generic/description) - adds a configurable [description](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#adding_an_author_and_description) meta tag to all HTML templates

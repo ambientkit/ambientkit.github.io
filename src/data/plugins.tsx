@@ -182,6 +182,13 @@ const Plugins: Plugin[] = [
     tags: ["opensource", "standard", "generic", "favorite"],
   },
   {
+    title: "bootstrap",
+    description: "Package bootstrap is an Ambient plugin that adds the Bootstrap library to all pages.",
+    website: "https://getbootstrap.com/",
+    source: "https://github.com/ambientkit/plugin/tree/main/generic/bootstrap",
+    tags: ["opensource", "standard", "generic"],
+  },
+  {
     title: "charset",
     description: "Package charset is an Ambient plugin that sets a charset meta tag in the HTML header.",
     website: "https://github.com/ambientkit/plugin/tree/main/generic/charset",
