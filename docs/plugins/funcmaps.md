@@ -6,7 +6,7 @@ The `FuncMap()` function should return a callable function that accepts an http.
 
 Below is an example of how to define a FuncMap.
 
-```go title="plugin.go"
+```go
 // FuncMap returns a callable function that accepts a request.
 func (p *Plugin) FuncMap() func(r *http.Request) template.FuncMap {
 	return func(r *http.Request) template.FuncMap {
@@ -63,7 +63,7 @@ If the key does not include the prefix of the plugin, Ambient will automatically
 
 You can also use FuncMaps in the [`Assets()`](/docs/plugins/assets) function since they are parsed as HTML templates.
 
-```go title="plugin.go"
+```go
 // Assets returns a list of assets and an embedded filesystem.
 func (p *Plugin) Assets() ([]ambient.Asset, *embed.FS) {
 	arr := make([]ambient.Asset, 0)

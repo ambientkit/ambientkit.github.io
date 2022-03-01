@@ -2,13 +2,38 @@
 
 A [template engine](https://github.com/ambientkit/plugin/blob/main/templateengine/htmlengine/htmlengine.go) renders content to the `ResponseWriter`.
 
-The template engine plugin must include the MVP code as well as the `TemplateEngine()` function.
+A template engine plugin must include, at a minimum, the code below with the `TemplateEngine()` function. Notice the `*ambient.PluginBase` object is not included in the struct because this plugin type does need it.
 
 ```go
+// Package mvp provides a template for building a plugin for Ambient apps.
+package mvp
+
+import (
+	"github.com/ambientkit/ambient"
+)
+
+// Plugin represents an Ambient plugin.
+type Plugin struct{}
+
+// New returns a new mvp plugin.
+func New() *Plugin {
+	return &Plugin{}
+}
+
+// PluginName returns the plugin name.
+func (p *Plugin) PluginName() string {
+	return "mvp"
+}
+
+// PluginVersion returns the plugin version.
+func (p *Plugin) PluginVersion() string {
+	return "1.0.0"
+}
+
 // TemplateEngine returns a template engine.
 func (p *Plugin) TemplateEngine(logger ambient.Logger, injector ambient.AssetInjector) (ambient.Renderer, error) {
-	tmpl := NewTemplateEngine(logger, injector)
-	return tmpl, nil
+	// Your code here.
+	return nil, nil
 }
 ```
 

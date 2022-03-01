@@ -118,7 +118,6 @@ The plugin does not have any embedded files.
 
 ## Example Usage
 
-```go
 package main
 
 import (
@@ -156,9 +155,8 @@ func main() {
 		log.Fatalln(err.Error())
 	}
 }
-```
 
 ---
 
-Docgen by [Ambient](https://ambientkit.github.io/)
+Docgen by [Ambient](https://ambientkit.github.io)
 ```

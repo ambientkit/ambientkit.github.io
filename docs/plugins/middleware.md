@@ -2,13 +2,44 @@
 
 [Middleware](https://github.com/ambientkit/plugin/blob/main/sessionmanager/scssession/scssession.go) runs code before or after a route is served. It's useful for tasks like loging a request, checking if the user is authenticated, and compressing the response.
 
-A middleware plugin must include the MVP code as well as the `Middleware()` function.
+A middleware plugin must include, at a minimum, the code below with the `Middleware()` function. Notice the `*ambient.PluginBase` object is included in the struct because it can be used by the `Middleware()` function.
 
 ```go
+// Package mvp provides a template for building a plugin for Ambient apps.
+package mvp
+
+import (
+	"net/http"
+
+	"github.com/ambientkit/ambient"
+)
+
+// Plugin represents an Ambient plugin.
+type Plugin struct {
+	*ambient.PluginBase
+}
+
+// New returns a new mvp plugin.
+func New() *Plugin {
+	return &Plugin{
+		PluginBase: &ambient.PluginBase{},
+	}
+}
+
+// PluginName returns the plugin name.
+func (p *Plugin) PluginName() string {
+	return "mvp"
+}
+
+// PluginVersion returns the plugin version.
+func (p *Plugin) PluginVersion() string {
+	return "1.0.0"
+}
+
 // Middleware returns router middleware.
 func (p *Plugin) Middleware() []func(next http.Handler) http.Handler {
 	return []func(next http.Handler) http.Handler{
-		p.sessionManager.LoadAndSave,
+		// Add your code here.
 	}
 }
 ```

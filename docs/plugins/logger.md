@@ -2,14 +2,38 @@
 
 A [logger](https://github.com/ambientkit/plugin/blob/main/logger/logruslogger/logruslogger.go) outputs messages at different levels: fatal, error, warn, info, and debug. It's helpful when you can provide more information during troubleshooting by changing the log level because you can get to the bottom of issues quicker. The logger is used by the Ambient internal system and is made available to plugins as well.
 
-The logger plugin must include the MVP code as well as the `Logger()` function.
+A logger plugin must include, at a minimum, the code below with the `Logger()` function. Notice the `*ambient.PluginBase` object is not included in the struct because this plugin type does need it.
 
 ```go
+// Package mvp provides a template for building a plugin for Ambient apps.
+package mvp
+
+import (
+	"github.com/ambientkit/ambient"
+)
+
+// Plugin represents an Ambient plugin.
+type Plugin struct{}
+
+// New returns a new mvp plugin.
+func New() *Plugin {
+	return &Plugin{}
+}
+
+// PluginName returns the plugin name.
+func (p *Plugin) PluginName() string {
+	return "mvp"
+}
+
+// PluginVersion returns the plugin version.
+func (p *Plugin) PluginVersion() string {
+	return "1.0.0"
+}
+
 // Logger returns a logger.
 func (p *Plugin) Logger(appName string, appVersion string) (ambient.AppLogger, error) {
-	// Create the logger.
-	p.log = NewLogger(appName, appVersion)
-	return p.log, nil
+	// Add your code here.
+	return nil, nil
 }
 ```
 

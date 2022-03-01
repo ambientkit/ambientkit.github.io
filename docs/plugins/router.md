@@ -2,18 +2,38 @@
 
 A [router](https://github.com/ambientkit/plugin/blob/main/router/awayrouter/awayrouter.go) handles web requests based on the HTTP method and route.
 
-A router plugin must include the [MVP](mvp) code as well as the `Router()` function.
+A router system plugin must include, at a minimum, the code below with the `Router()` function. Notice the `*ambient.PluginBase` object is not included in the struct because this plugin type does need it.
 
 ```go
+// Package mvp provides a template for building a plugin for Ambient apps.
+package mvp
+
+import (
+	"github.com/ambientkit/ambient"
+)
+
+// Plugin represents an Ambient plugin.
+type Plugin struct{}
+
+// New returns a new mvp plugin.
+func New() *Plugin {
+	return &Plugin{}
+}
+
+// PluginName returns the plugin name.
+func (p *Plugin) PluginName() string {
+	return "mvp"
+}
+
+// PluginVersion returns the plugin version.
+func (p *Plugin) PluginVersion() string {
+	return "1.0.0"
+}
+
 // Router returns a router.
 func (p *Plugin) Router(logger ambient.Logger, te ambient.Renderer) (ambient.AppRouter, error) {
-	// Set up the default router.
-	mux := router.New()
-
-	// Set the NotFound and custom ServeHTTP handlers.
-	p.setupRouter(logger, mux, te)
-
-	return mux, nil
+	// Add your code here.
+	return nil, nil
 }
 ```
 

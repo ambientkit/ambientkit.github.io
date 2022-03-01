@@ -2,21 +2,38 @@
 
 A [storage system](https://github.com/ambientkit/plugin/blob/main/storage/gcpbucketstorage/gcpbucketstorage.go) stores the app settings (title, content, scheme, URL, etc.) as well as plugin status (enabled/disabled), settings, and permissions granted.
 
-The storage system plugin must include the MVP code as well as the `Storage()` function.
+A storage system plugin must include, at a minimum, the code below with the `Storage()` function. Notice the `*ambient.PluginBase` object is not included in the struct because this plugin type does need it.
 
 ```go
+// Package mvp provides a template for building a plugin for Ambient apps.
+package mvp
+
+import (
+	"github.com/ambientkit/ambient"
+)
+
+// Plugin represents an Ambient plugin.
+type Plugin struct{}
+
+// New returns a new mvp plugin.
+func New() *Plugin {
+	return &Plugin{}
+}
+
+// PluginName returns the plugin name.
+func (p *Plugin) PluginName() string {
+	return "mvp"
+}
+
+// PluginVersion returns the plugin version.
+func (p *Plugin) PluginVersion() string {
+	return "1.0.0"
+}
+
 // Storage returns data and session storage.
 func (p *Plugin) Storage(logger ambient.Logger) (ambient.DataStorer, ambient.SessionStorer, error) {
-	// Load the bucket from the environment variable.
-	bucket := os.Getenv(BucketEnv)
-	if len(bucket) == 0 {
-		return nil, nil, fmt.Errorf("%v: environment variable, %v, is missing", p.PluginName(), BucketEnv)
-	}
-
-	ds := store.NewGCPStorage(bucket, p.sitePath)
-	ss := store.NewGCPStorage(bucket, p.sessionPath)
-
-	return ds, ss, nil
+	// Add your code here.
+	return nil, nil, nil
 }
 ```
 
