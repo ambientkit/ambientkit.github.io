@@ -55,14 +55,14 @@ The function should return an object that satisfies the [`Renderer`](https://git
 // Renderer represents a template renderer.
 type Renderer interface {
 	Page(w http.ResponseWriter, r *http.Request, assets embed.FS, templateName string,
-		fm template.FuncMap, vars map[string]interface{}) (status int, err error)
+		fm template.FuncMap, vars map[string]interface{}) (err error)
 	PageContent(w http.ResponseWriter, r *http.Request, content string,
-		fm template.FuncMap, vars map[string]interface{}) (status int, err error)
+		fm template.FuncMap, vars map[string]interface{}) (err error)
 	Post(w http.ResponseWriter, r *http.Request, assets embed.FS, templateName string,
-		fm template.FuncMap, vars map[string]interface{}) (status int, err error)
+		fm template.FuncMap, vars map[string]interface{}) (err error)
 	PostContent(w http.ResponseWriter, r *http.Request, content string,
-		fm template.FuncMap, vars map[string]interface{}) (status int, err error)
+		fm template.FuncMap, vars map[string]interface{}) (err error)
 	Error(w http.ResponseWriter, r *http.Request, content string, statusCode int,
-		fm template.FuncMap, vars map[string]interface{}) (status int, err error)
+		fm template.FuncMap, vars map[string]interface{}) (err error)
 }
 ```

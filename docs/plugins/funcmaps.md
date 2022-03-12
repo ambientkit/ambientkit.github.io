@@ -23,7 +23,7 @@ func (p *Plugin) FuncMap() func(r *http.Request) template.FuncMap {
 Your handler should pass in `p.FuncMap()` so the template can use it.
 
 ```go title="plugin_route.go"
-func (p *Plugin) welcomeView(w http.ResponseWriter, r *http.Request) (status int, err error) {
+func (p *Plugin) welcomeView(w http.ResponseWriter, r *http.Request) (err error) {
 	vars := make(map[string]interface{})
 	vars["title"] = "Welcome"
 	return p.Render.Page(w, r, assets, "template/view", p.FuncMap(), vars)

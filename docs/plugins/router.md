@@ -54,17 +54,18 @@ type AppRouter interface {
 
 // Router represents a router.
 type Router interface {
-	Handle(method string, path string, fn func(http.ResponseWriter, *http.Request) (int, error))
-	Get(path string, fn func(http.ResponseWriter, *http.Request) (int, error))
-	Post(path string, fn func(http.ResponseWriter, *http.Request) (int, error))
-	Patch(path string, fn func(http.ResponseWriter, *http.Request) (int, error))
-	Put(path string, fn func(http.ResponseWriter, *http.Request) (int, error))
-	Delete(path string, fn func(http.ResponseWriter, *http.Request) (int, error))
-	Head(path string, fn func(http.ResponseWriter, *http.Request) (int, error))
-	Options(path string, fn func(http.ResponseWriter, *http.Request) (int, error))
+	Handle(method string, path string, fn func(http.ResponseWriter, *http.Request) error)
+	Get(path string, fn func(http.ResponseWriter, *http.Request) error)
+	Post(path string, fn func(http.ResponseWriter, *http.Request) error)
+	Patch(path string, fn func(http.ResponseWriter, *http.Request) error)
+	Put(path string, fn func(http.ResponseWriter, *http.Request) error)
+	Delete(path string, fn func(http.ResponseWriter, *http.Request) error)
+	Head(path string, fn func(http.ResponseWriter, *http.Request) error)
+	Options(path string, fn func(http.ResponseWriter, *http.Request) error)
+	StatusError(status int, err error) error
 	Error(status int, w http.ResponseWriter, r *http.Request)
 	Param(r *http.Request, name string) string
-	Wrap(handler http.HandlerFunc) func(w http.ResponseWriter, r *http.Request) (status int, err error)
+	Wrap(handler http.HandlerFunc) func(w http.ResponseWriter, r *http.Request) (err error)
 }
 ```
 
@@ -85,38 +86,38 @@ func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) {
 }
 ```
 
-Ambient uses a [custom handler](https://github.com/ambientkit/plugin/blob/main/pkg/ambhandler/ambhandler.go) that requires a return of both a HTTP status code as well as an error (which can be nil).
+Ambient uses a [custom handler](https://github.com/ambientkit/plugin/blob/main/pkg/ambhandler/ambhandler.go) that requires a return of an error (which can be nil).
 
 ```go title="plugin/pkg/ambhandler/ambhandler.go"
 // Handler represents an Ambient handler.
 type Handler struct {
-	HandlerFunc     func(w http.ResponseWriter, r *http.Request) (status int, err error)
-	CustomServeHTTP func(w http.ResponseWriter, r *http.Request, status int, err error)
+	HandlerFunc     func(w http.ResponseWriter, r *http.Request) (err error)
+	CustomServeHTTP func(w http.ResponseWriter, r *http.Request, err error)
 }
 
 // ServeHTTP handles all the errors from the HTTP handlers.
 func (fn Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	status, err := fn.HandlerFunc(w, r)
+	err := fn.HandlerFunc(w, r)
 
 	if fn.CustomServeHTTP == nil {
 		return
 	}
 
-	fn.CustomServeHTTP(w, r, status, err)
+	fn.CustomServeHTTP(w, r, err)
 }
 ```
 
-There are a few articles that talk about custom handlers:
+There are a few articles that talk about custom handlers - we use Matt Silverlock's method:
 
+- [http.Handler and Error Handling in Go](http://blog.questionable.services/article/http-handler-error-handling-revisited/)
 - [Error handling and Go](https://go.dev/blog/error-handling-and-go)
-- [Custom Handlers and Avoiding Globals in Go Web Applications](https://blog.questionable.services/article/custom-handlers-avoiding-globals/)
 
-The advantage of return values means that for every `return` in a handler, the developer has to specify the response. It's easy for a developer to do something like this where they return in a handler without writing a status code or content and the response will be a 200 with no content.
+The advantage of a return value means that for every `return` in a handler, the developer has to specify an error or not. It's easy for a developer to do something like this where they return in a handler without writing a status code or content and the response will be a 200 with no content.
 
 ```go
 func hello(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
-		// This return will send incorrectly a 200 and no content.
+		// This return will send a 200 and no content.
 		return
 	}
 
@@ -127,21 +128,21 @@ func hello(w http.ResponseWriter, r *http.Request) {
 Once you add the return values, the developer must be explicit on what is returned in the response.
 
 ```go
-func hello(w http.ResponseWriter, r *http.Request) (status int, err error) {
+func hello(w http.ResponseWriter, r *http.Request) (err error) {
 	if r.Method != "POST" {
 		// This return will send correctly a 403 and the default error message.
-		return http.StatusForbidden, nil
+		return p.Mux.StatusError(http.StatusForbidden, nil)
 	}
 
 	fmt.Fprint(w, "hello")
-	return http.StatusOK, nil
+	return nil // This means the default 200 will be sent.
 }
 ```
 
 You can then take it a step further and create functions that output to the writer with correct formats which makes the code very clean and understandable.
 
 ```go
-func (h *Handler) hello(w http.ResponseWriter, r *http.Request) (status int, err error) {
+func (h *Handler) hello(w http.ResponseWriter, r *http.Request) (err error) {
 	if r.Method != "POST" {
 		return h.JSON(w, http.StatusForbidden, nil)
 	}
@@ -150,7 +151,7 @@ func (h *Handler) hello(w http.ResponseWriter, r *http.Request) (status int, err
 }
 ```
 
-This is what it would look like without the return values:
+This is what it would look like without the return value:
 
 ```go
 func (h *Handler) hello(w http.ResponseWriter, r *http.Request) {

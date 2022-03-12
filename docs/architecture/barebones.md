@@ -166,7 +166,7 @@ func (p *Plugin) GrantRequests() []ambient.GrantRequest {
 
 // Routes sets routes for the plugin.
 func (p *Plugin) Routes() {
-	p.Mux.Get("/", func(w http.ResponseWriter, r *http.Request) (status int, err error) {
+	p.Mux.Get("/", func(w http.ResponseWriter, r *http.Request) (err error) {
 		return p.Toolkit.JSON(w, http.StatusOK, map[string]interface{}{
 			"message": "hello world!",
 		})

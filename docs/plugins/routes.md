@@ -19,7 +19,7 @@ The function doesn't return any objects and shouldn't fail either. It also takes
 
 ```go
 // Home renders the home template.
-func (p *Plugin) Home(w http.ResponseWriter, r *http.Request) (status int, err error) {
+func (p *Plugin) Home(w http.ResponseWriter, r *http.Request) (err error) {
 	vars := make(map[string]interface{})
 	vars["title"] = "Home"
 	return p.Render.Page(w, r, assets, "template/content/home", p.funcMap(r), vars)
