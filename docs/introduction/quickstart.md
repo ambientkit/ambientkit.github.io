@@ -2,6 +2,8 @@
 
 Ambient is a framework in Go for building web apps using plugins. You can use the plugins already included to stand up a blog just like the [Bear Blog](https://bearblog.dev/) or create your own plugins to build your own app. Plugins can be enabled/disabled while the app is running which means routes as well as middleware can also modified without restarting the app. Plugins must be granted permissions above being enabled which provides you with better control over your app. Ambient also supports [compiled plugins using gRPC](/docs/plugins/grpc) via the [HashiCorp plugin system](https://github.com/hashicorp/go-plugin).
 
+_**Note:** Ambient has an evolving API so it's not recommended for production quite yet, but would love your [feedback](https://github.com/ambientkit/ambient/issues/new/choose) as we get there._
+
 Let's discover Ambient in **less than 5 minutes**.
 
 ## Getting Started
