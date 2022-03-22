@@ -386,7 +386,7 @@ const Plugins: Plugin[] = [
   },
   {
     title: "redirecttourl",
-    description: "Package redirecttourl is an Ambient plugin with middlware that redirects to the correct site URL.",
+    description: "Package redirecttourl is an Ambient plugin with middleware that redirects to the correct site URL.",
     website: "https://github.com/ambientkit/plugin/tree/main/middleware/redirecttourl",
     source: "https://github.com/ambientkit/plugin/tree/main/middleware/redirecttourl",
     tags: ["opensource", "standard", "middleware"],

@@ -65,7 +65,7 @@ You can also use FuncMaps in the [`Assets()`](/docs/plugins/assets) function sin
 
 ```go
 // Assets returns a list of assets and an embedded filesystem.
-func (p *Plugin) Assets() ([]ambient.Asset, *embed.FS) {
+func (p *Plugin) Assets() ([]ambient.Asset, ambient.FileSystemReader) {
 	arr := make([]ambient.Asset, 0)
 
 	arr = append(arr, ambient.Asset{
