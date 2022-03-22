@@ -43,6 +43,7 @@ func Plugins() *ambient.PluginLoader {
 		// will be enabled and given full access.
 		TrustedPlugins: map[string]bool{},
 		Plugins:        []ambient.Plugin{},
+		GRPCPlugins: []ambient.GRPCPlugin{},
 		Middleware: []ambient.MiddlewarePlugin{
 			// Middleware - executes bottom to top.
 			sessionManager, // Session manager middleware.

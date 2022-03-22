@@ -172,6 +172,11 @@ const sidebars = {
         },
         {
           type: 'doc',
+          id: 'plugins/grpc',
+          label: 'gRPC Compiled Plugins',
+        },
+        {
+          type: 'doc',
           id: 'plugins/docgen',
           label: 'Doc Generation',
         },
