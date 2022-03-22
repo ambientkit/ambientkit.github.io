@@ -18,7 +18,7 @@ const FeatureList: FeatureItem[] = [
       <>
         Almost everything in Ambient is a <Link to="/docs/plugins/mvp">plugin</Link>. Grab a few of
         the <Link to="/docs/plugins/library">pre-built plugins</Link> to get a
-        website up and running in no time.
+        website up and running in no time. <Link to="/docs/plugins/grpc">gRPC support</Link> out of the box.
       </>
     ),
   },
