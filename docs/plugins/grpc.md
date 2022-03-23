@@ -42,7 +42,7 @@ func main() {
 
 ## Ambient Usage 
 
-To reference the gRPC plugin in Ambient, add the plugin name and the path to the binary to the `Plugins` array. Currently, gRPC plugins can only be used for generic plugins, they can't be used for the other core plugins.
+To reference the gRPC plugin in Ambient, add the plugin name and the path to the binary to the `Plugins` array. Currently, gRPC plugins can only be used for generic and middleware plugins, they can't be used for the other core plugins.
 
 ```go
 plugins := &ambient.PluginLoader{
@@ -58,6 +58,7 @@ plugins := &ambient.PluginLoader{
 	},
 	Middleware: []ambient.MiddlewarePlugin{
 		// Middleware - executes bottom to top.
+		ambient.NewGRPCPlugin("yourmwplugin", "./yourmwplugin/cmd/plugin/yourmwplugin"),
 		sessPlugin,
 	},
 }
