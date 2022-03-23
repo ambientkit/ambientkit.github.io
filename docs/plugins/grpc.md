@@ -2,9 +2,10 @@
 
 Ambient also supports interacting with plugins over gRPC using the [HashiCorp plugin system](https://github.com/hashicorp/go-plugin). This allows you to compile plugins and then send data back and forth just like a standard plugin. A few reasons why you may choose to go this route:
 
-- to sell a plugin for Ambient, but don't want to distribute the source code
+- to dynamically load and unload plugins without restarting the application
 - to write a plugin for Ambient in another language other than Go (it will require some non-trivial work to re-implement the plugin API)
 - to isolate your application so plugins cannot affect your core application if they panic or leak memory
+- to sell a plugin for Ambient, but don't want to distribute the source code
 
 ## Plugin 
 
@@ -52,9 +53,8 @@ plugins := &ambient.PluginLoader{
 	// Trusted plugins are those that are typically needed to boot so they
 	// will be enabled and given full access.
 	TrustedPlugins: trusted,
-	Plugins: []ambient.Plugin{},
-	GRPCPlugins: []ambient.GRPCPlugin{
-		{Name: "yourplugin", Path: "./yourplugin/cmd/plugin/yourplugin"},
+	Plugins: []ambient.Plugin{
+		ambient.NewGRPCPlugin("yourplugin", "./yourplugin/cmd/plugin/yourplugin"),
 	},
 	Middleware: []ambient.MiddlewarePlugin{
 		// Middleware - executes bottom to top.
