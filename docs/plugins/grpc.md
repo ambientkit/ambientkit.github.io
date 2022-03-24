@@ -63,3 +63,11 @@ plugins := &ambient.PluginLoader{
 	},
 }
 ```
+
+## Limitations
+
+There are a few limitations when using gRPC plugins because of the nature of the communication. You will need to keep these use cases in mind:
+
+- **storing values in request context**: if you are relying on `context` from `http.Request` in your middleware and routes to store and read values, they won't behave as you expect because there is no way to serialize context values. You can't iterate over them so there isn't an easy way to get those values out to send them back and forth.
+
+If you want to take a closer look at the definitions, all of the data that is transferred between the server and the plugins is documented in these [`.proto` files](https://github.com/ambientkit/ambient/tree/main/pkg/grpcp/protobuf).
