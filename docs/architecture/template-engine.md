@@ -9,6 +9,7 @@ The template engine plugin, [htmlengine](https://github.com/ambientkit/plugin/tr
 - embedded filesystem using [`embed.FS`](https://pkg.go.dev/embed) - all plugins that serve content can have files embedded for single binary web deployments
 - template escaping by default
 - template debugging that can be enabled to show which plugins have modified which blocks of HTML
+- templates will throw an error if they are [missing keys](https://pkg.go.dev/text/template#Template.Option) - you can disable by passing in a var like this: `vars["amb.option"]="missingkey=default"`
 
 The template engine also accepts an `AssetInjector` from Ambient which is extremely powerful and gives plugins the ability to:
 

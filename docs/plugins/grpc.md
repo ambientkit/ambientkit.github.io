@@ -69,5 +69,7 @@ plugins := &ambient.PluginLoader{
 There are a few limitations when using gRPC plugins because of the nature of the communication. You will need to keep these use cases in mind:
 
 - **storing values in request context**: if you are relying on `context` from `http.Request` in your middleware and routes to store and read values, they won't behave as you expect because there is no way to serialize context values. You can't iterate over them so there isn't an easy way to get those values out to send them back and forth.
+- **using non-primitives when passing data into templates**: if you try to pass in a template.HTML via vars, it will be converted to string after serialization/deserialization via gRPC since gRPC only supports primitives. The suggested approach is to use a funcMap instead that returns escaped HTML (`template.HTML`). [Reference](https://github.com/golang/protobuf/issues/1302).
+- **passing data into templates that has JSON tags**: if you don't use JSON tags and then use capital letters, gRPC will respect the capitalization. If you do use JSON tags, then gRPC will use the JSON tag as the name during serialization/deserialization. It's recommended to leave the tags off.
 
 If you want to take a closer look at the definitions, all of the data that is transferred between the server and the plugins is documented in these [`.proto` files](https://github.com/ambientkit/ambient/tree/main/pkg/grpcp/protobuf).

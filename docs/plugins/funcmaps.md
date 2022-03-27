@@ -26,7 +26,7 @@ Your handler should pass in `p.FuncMap()` so the template can use it.
 func (p *Plugin) welcomeView(w http.ResponseWriter, r *http.Request) (err error) {
 	vars := make(map[string]interface{})
 	vars["title"] = "Welcome"
-	return p.Render.Page(w, r, assets, "template/view", p.FuncMap(), vars)
+	return p.Render.Page(w, r, assets, "template/view.tmpl", p.FuncMap(), vars)
 }
 ```
 
@@ -45,6 +45,36 @@ These functions are always available in templates so don't try to overwrite them
 
 ```html
 <a href="{{URLPrefix}}/dashboard/posts/new">New post</a>
+```
+
+`TrustHTML` returns prevents the [HTML](https://pkg.go.dev/html/template#HTML) from being escaped.
+
+```html
+{{.content | TrustHTML}}
+```
+
+`TrustHTMLAttr` returns prevents the [HTML attributes](https://pkg.go.dev/html/template#HTMLAttr) from being escaped. For example: ` dir="ltr"`.
+
+```html
+{{.content | TrustHTMLAttr}}
+```
+
+`TrustJS` returns prevents the [JavaScript](https://pkg.go.dev/html/template#JS) from being escaped.
+
+```html
+{{.content | TrustJS}}
+```
+
+`TrustJSStr` returns prevents the [JavaScript characters](https://pkg.go.dev/html/template#JSStr) from being escaped.
+
+```html
+{{.content | TrustJSStr}}
+```
+
+`TrustSrcset` returns prevents the [srcset](https://pkg.go.dev/html/template#Srcset) from being escaped.
+
+```html
+{{.content | TrustSrcset}}
 ```
 
 ## Namespaces
