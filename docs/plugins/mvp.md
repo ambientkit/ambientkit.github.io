@@ -86,9 +86,9 @@ func Plugins() *ambient.PluginLoader {
 			mvp.New(),                     // Your new plugin.
 		},
 		Middleware: []ambient.MiddlewarePlugin{
-			// Middleware - executes bottom to top.
-			sessionManager,   // Session manager middleware.
+			// Middleware - executes top to bottom.
 			logrequest.New(), // Log every request as INFO.
+			sessionManager,   // Session manager middleware.
 		},
 	}
 }

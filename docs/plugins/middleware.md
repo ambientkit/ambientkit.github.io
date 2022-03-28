@@ -44,7 +44,7 @@ func (p *Plugin) Middleware() []func(next http.Handler) http.Handler {
 }
 ```
 
-The `Middleware()` function should return an object that satisfies the `[]func(next http.Handler) http.Handler` definition. The middleware load from bottom to top so be sure to organize them accordingly. They will also be ordered based on the position in the `plugin.go` file.
+The `Middleware()` function should return an object that satisfies the `[]func(next http.Handler) http.Handler` definition. The middleware load from top to bottom so be sure to organize them accordingly. They will also be ordered based on the position in the `plugin.go` file.
 
 ## URL Path
 

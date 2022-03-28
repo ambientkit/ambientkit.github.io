@@ -10,6 +10,7 @@ The template engine plugin, [htmlengine](https://github.com/ambientkit/plugin/tr
 - template escaping by default
 - template debugging that can be enabled to show which plugins have modified which blocks of HTML
 - templates will throw an error if they are [missing keys](https://pkg.go.dev/text/template#Template.Option) - you can disable by passing in a var like this: `vars["amb.option"]="missingkey=default"`
+- template vars will be marshalled to JSON and then back to a `map[string]interface{}` to ensure there are consistencies between standard plugins and gRPC plugins - this affects non-primitive types like `time.Time` because it will be stored as a string so if you're modifying using FuncMaps, you need to accept a string, then do a parse like this: `time.Parse(time.RFC3339, t)`
 
 The template engine also accepts an `AssetInjector` from Ambient which is extremely powerful and gives plugins the ability to:
 
