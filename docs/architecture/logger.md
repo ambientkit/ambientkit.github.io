@@ -8,7 +8,9 @@ Developing a logging strategy is a good practice when you start building an app 
 
 There is also a `Fatal` log level that is available to only the core Ambient app because a plugin should not have the ability to terminate the app.
 
-A logger should be enabled as early as possible so all logs are routed to the right system. Typically, the loading of environment variables occurs before the logger is set up so it's ok to use the built-in log package for those early exists. The Ambient app does return the logger once the app is created.
+A logger should be enabled as early as possible so all logs are routed to the right system. Typically, the loading of environment variables occurs before the logger is set up so it's ok to use the built-in log package for those early exists.
+
+A logger should accept an app name and a version. It should also support recreating a named logger off the app logger that adds the service name to logs to help differentiate in large applications.
 
 ```go title="main.go"
 import (
