@@ -10,7 +10,7 @@ Plugins are only allowed to interact with the Ambient app when:
 
 ## Trusted Plugins
 
-When plugins are trusted, the will be enabled and all of their grants will be approved automatically. You also cannot disable the plugins when they are trusted.
+When plugins are trusted, they will be enabled and all of their grants will be approved automatically. You also cannot disable the plugins when they are trusted.
 
 The core plugins (logger, storage engine, router, template engine, and session manager) do not need to be added to the trusted plugin list because the app cannot function without them so they are trusted implicitly.
 

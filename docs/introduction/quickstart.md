@@ -66,7 +66,7 @@ Start the webserver on port 8080 (local development with no Docker).
 make start
 ```
 
-The login page is located at: `http://localhost:8080/login`
+The login page is located at: `http://localhost:8080/login/admin`
 
 To login, you'll need:
 
