@@ -77,3 +77,27 @@ If you want to take a closer look at the definitions, all of the data that is tr
 ## Testing
 
 There is a test suite that is shared between standard and gRPC plugins available in the [plugin repository](https://github.com/ambientkit/plugin/blob/main/pkg/grpctestutil/grpcp_test.go). It's separate from the `ambient` repository because it requires real plugins to do the testing so to limit dependencies back and forth, we separated them for now. If you find there are inconsistencies between when a plugin is accessed using the standard method vs the gRPC method, please [let us know](https://github.com/ambientkit/ambient/issues).
+
+## Benchmarks
+
+To give you a sense of the performance of standard vs gRPC plugins, we ran tests against one of the endpoints that hit most of the components (router, template engine, secure site, assets, and funcmap). Google recommends you aim for a response time of less than 200ms, but less than 100ms is better - keep in mind these are all local tests so they will be quicker than a test across a network, but the purpose is to show the variance in response times. Even when running these sets of tests multiple times, there will be variance between them.
+
+Based on the results below, gRPC is about 3 times slower than standard plugins, but it should not be significant enough for users to notice.
+
+### Non-Concurrent Response Times
+
+These are the results for 5000 tests run one after another:
+
+```
+Standard Plugins: avg: 0.0268ms | max: 2ms | min: 0ms
+gRPC Plugins:     avg: 3.035ms  | max: 6ms | min: 3ms
+```
+
+### Concurrent Response Times
+
+These are the results for 5000 tests (50 concurrently for 100 tests):
+
+```
+Standard Plugins: avg: 6.0218ms  | max: 10ms | min: 0ms
+gRPC Plugins:     avg: 19.4602ms | max: 28ms | min: 8ms
+```
