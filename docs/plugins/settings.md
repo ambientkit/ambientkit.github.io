@@ -6,7 +6,7 @@ A plugin that needs settings should use MVP code as well as the `Settings()` fun
 
 ```go
 // Settings returns a list of user settable fields.
-func (p *Plugin) Settings() []ambient.Setting {
+func (p *Plugin) Settings(context.Context) []ambient.Setting {
 	return []ambient.Setting{
 		{
 			Name:    Username,

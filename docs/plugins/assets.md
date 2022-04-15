@@ -113,7 +113,7 @@ For all the examples below, they would be added to the `Assets()` function:
 
 ```go
 // Assets returns a list of assets and an embedded filesystem.
-func (p *Plugin) Assets() ([]ambient.Asset, ambient.FileSystemReader) {
+func (p *Plugin) Assets(context.Context) ([]ambient.Asset, ambient.FileSystemReader) {
 	arr := make([]ambient.Asset, 0)
 	// All the code samples below would go here.
 	return arr, &assets
@@ -288,7 +288,7 @@ An embedded filesystem (`embded.FS`) can also be used with assets. In the exampl
 var assets embed.FS
 
 // Assets returns a list of assets and an embedded filesystem.
-func (p *Plugin) Assets() ([]ambient.Asset, ambient.FileSystemReader) {
+func (p *Plugin) Assets(context.Context) ([]ambient.Asset, ambient.FileSystemReader) {
 	return []ambient.Asset{
 		{
 			Filetype: ambient.AssetStylesheet,
@@ -326,7 +326,7 @@ You can use `LayoutOnly` to set whether `LayoutPost` or `LayoutPage` layouts get
 
 ```go
 // Assets returns a list of assets and an embedded filesystem.
-func (p *Plugin) Assets() ([]ambient.Asset, ambient.FileSystemReader) {
+func (p *Plugin) Assets(context.Context) ([]ambient.Asset, ambient.FileSystemReader) {
 	return []ambient.Asset{
 		{
 			Path:     "css/disqus.css",
@@ -349,7 +349,7 @@ For non-HTML files, you may need to do a find and replace to inject variables in
 var assets embed.FS
 
 // Assets returns a list of assets and an embedded filesystem.
-func (p *Plugin) Assets() ([]ambient.Asset, ambient.FileSystemReader) {
+func (p *Plugin) Assets(context.Context) ([]ambient.Asset, ambient.FileSystemReader) {
 	return []ambient.Asset{
 		{
 			Path:     "js/disqus.js",
@@ -411,7 +411,7 @@ In this example, a `<div>` element is injected into the bottom of the `<main>` s
 
 ```go
 // Assets returns a list of assets and an embedded filesystem.
-func (p *Plugin) Assets() ([]ambient.Asset, ambient.FileSystemReader) {
+func (p *Plugin) Assets(context.Context) ([]ambient.Asset, ambient.FileSystemReader) {
 	return []ambient.Asset{
 		{
 			Filetype: ambient.AssetGeneric,

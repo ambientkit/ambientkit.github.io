@@ -27,17 +27,17 @@ func New() *Plugin {
 }
 
 // PluginName returns the plugin name.
-func (p *Plugin) PluginName() string {
+func (p *Plugin) PluginName(context.Context) string {
 	return "mvp"
 }
 
 // PluginVersion returns the plugin version.
-func (p *Plugin) PluginVersion() string {
+func (p *Plugin) PluginVersion(context.Context) string {
 	return "1.0.0"
 }
 
 // Middleware returns router middleware.
-func (p *Plugin) Middleware() []func(next http.Handler) http.Handler {
+func (p *Plugin) Middleware(context.Context) []func(next http.Handler) http.Handler {
 	return []func(next http.Handler) http.Handler{
 		// Add your code here.
 	}

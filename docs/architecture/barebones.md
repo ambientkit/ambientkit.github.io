@@ -148,24 +148,24 @@ func NewHelloPlugin() *Plugin {
 }
 
 // PluginName returns the plugin name.
-func (p *Plugin) PluginName() string {
+func (p *Plugin) PluginName(context.Context) string {
 	return "hello"
 }
 
 // PluginVersion returns the plugin version.
-func (p *Plugin) PluginVersion() string {
+func (p *Plugin) PluginVersion(context.Context) string {
 	return "1.0.0"
 }
 
 // GrantRequests returns a list of grants requested by the plugin.
-func (p *Plugin) GrantRequests() []ambient.GrantRequest {
+func (p *Plugin) GrantRequests(context.Context) []ambient.GrantRequest {
 	return []ambient.GrantRequest{
 		{Grant: ambient.GrantRouterRouteWrite, Description: "Access to create default route."},
 	}
 }
 
 // Routes sets routes for the plugin.
-func (p *Plugin) Routes() {
+func (p *Plugin) Routes(context.Context) {
 	p.Mux.Get("/", func(w http.ResponseWriter, r *http.Request) (err error) {
 		return p.Toolkit.JSON(w, http.StatusOK, map[string]interface{}{
 			"message": "hello world!",

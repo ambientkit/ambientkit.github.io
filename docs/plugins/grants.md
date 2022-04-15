@@ -8,7 +8,7 @@ Below is an example of the [bearblog](https://github.com/ambientkit/plugin/blob/
 
 ```go title="bearblog.go"
 // GrantRequests returns a list of grants requested by the plugin.
-func (p *Plugin) GrantRequests() []ambient.GrantRequest {
+func (p *Plugin) GrantRequests(context.Context) []ambient.GrantRequest {
 	return []ambient.GrantRequest{
 		{Grant: ambient.GrantUserAuthenticatedRead, Description: "Show different menus to authenticated vs unauthenticated users."},
 		{Grant: ambient.GrantUserAuthenticatedWrite, Description: "Access to login and logout the user."},

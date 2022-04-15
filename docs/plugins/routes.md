@@ -6,7 +6,7 @@ A [plugin with routes](https://github.com/ambientkit/plugin/blob/main/generic/si
 
 ```go
 // Routes sets routes for the plugin.
-func (p *Plugin) Routes() {
+func (p *Plugin) Routes(context.Context) {
 	p.Mux.Get("/", p.home)
 	p.Mux.Get("/login", p.login)
 	p.Mux.Post("/login", p.loginPost)
